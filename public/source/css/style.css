@@ -1,0 +1,258 @@
+*{margin: 0;padding: 0;}
+h1,h2,h3,h4,h5,h6,ul,li,p{margin: 0;padding: 0;}
+li{list-style: none;float: right;}
+a{text-decoration: none;}
+
+.row{
+	margin: 0px;
+	padding: 0px;
+}
+@font-face{
+	font-family: Lato-Bold;
+	src:url('../source/fonts/Lato-Bold.ttf') format('truetype');
+}
+@font-face{
+	font-family: Lato-Light;
+	src:url('../source/fonts/Lato-Light.ttf') format('truetype');
+}
+@font-face{
+	font-family: Lato-Regular;
+	src:url('../source/fonts/Lato-Regular.ttf') format('truetype');
+}
+@font-face{
+	font-family: Lato-Italic;
+	src:url('../source/fonts/Lato-Italic.ttf') format('truetype');
+}
+.bold{font-family: Lato-Bold;}
+.light{font-family: Lato-Light;}
+.regular{font-family: Lato-Rerular;}
+.italic{font-family: Lato-Italic;}
+.white{color: white;}
+body{background: #000;}
+/* Begin CSS for header-menu */
+.container-max{
+	width: 100%;
+	height: 100%;
+	margin-top: 10px;
+}
+.header-top{
+	background: #fff;
+}
+.logo{
+	padding: 5px 0px 5px 20px;
+}
+.header-menu {
+	padding: 10px 10px;
+	text-align: center;
+	background: none;
+	border: none;
+	margin: 0px;
+}
+.header-menu li{
+	padding: 0px 0px;
+}
+.header-menu a{
+	padding: 5px;
+	color: #000;
+}
+.header-menu a:hover{
+	background: #1bbc9b;
+	text-decoration: none;
+	color: #fff;
+}
+/* End CSS for header-menu */
+
+/* Begin CSS for header-title */
+.header-title{
+	background: url(..source/img/background.jpg);
+	text-align: center;
+}
+.title{
+	padding: 80px 0px;
+}
+.title span{
+	font-size: 55px;
+	padding: 20px 0px;
+}
+.title p{
+	font-size: 18px;
+	padding: 20px 0px;
+}
+.button{
+	background: #1bbc9b;
+}
+/* End CSS for header-title */
+
+/* Begin CSS for corporation */
+#corporation{
+	background: #fff;
+	text-align: center;
+}
+.corporation-title{
+	padding-bottom: 30px;
+}
+.corporation-title p{
+	font-size: 0px;
+}
+.corporation-list-btn{
+	margin:0 30%;
+	padding-bottom: 20px;
+
+}
+.corporation-btn{
+	padding: 5px 0px;
+}
+.corporation-btn a{
+	color: #fff;
+}
+.corporation-btn a:hover{
+	color: #000;
+}
+.corporation-icon{
+	padding: 15px 0px;
+}
+/* End CSS for corporation */
+
+/* Begin CSS for about us*/
+#about-us{
+	background: #1bbc9b;
+	text-align: center;
+	padding: 50px 10%;
+}
+.about-title{
+	padding-bottom: 45px;
+}
+.about-post{
+	padding: 10px 0px;
+}
+.about-text{
+	background: #fff;
+	width: 220px;
+	margin: 0 auto;
+	padding: 10px 5px;
+}
+.about-text span{
+	font-size: 18px;
+}
+.about-text p{
+	font-size: 14px;
+}
+/* End CSS for about us */
+
+/* Begin CSS for contact us */
+#contact{
+	background: #ecf0f1;
+	padding: 20px 0px;
+}
+.contact-title{
+	text-align: center;
+	padding-bottom: 10px;
+}
+.form-left{
+	padding: 0px 40px;
+}
+.form-left input{
+	width: 100%;
+	float: left;
+	margin-bottom: 2px;
+}
+.form-left textarea{
+	margin-bottom: 2px;
+}
+.form-left button{
+	float: right;
+}
+.form-right{
+	padding: 0px;
+}
+.form-right p{
+	line-height: 28px;
+}
+/* End CSS for contact us */
+
+/* Begin CSS for footer */
+.footer{
+	background: #2d3e50;
+	padding:5px 0px;
+}
+.footer-left{
+	font-size: 14px;
+	color: #fff;
+}
+.footer-left p{
+	line-height: 45px;
+}
+.footer-right a{
+	background: #1bbc9b;
+	color: #fff;
+	float: right;
+	padding: 15px;
+	text-decoration: none;
+}
+.footer-right a:hover{
+	color: #000;
+}
+/* End CSS for footer */
+
+/* Begin CSS for responsive menu */
+.collapse-li{
+	border: none;
+}
+@media screen and (max-width: 768px){
+	.collapse-li li{padding: 10px 0px;float: none;}
+	.header-menu{padding: 0px 5px 0px 0px;}
+	.lolo{padding-left: 5px;}
+	.navbar-header button{margin:10px 0px;}
+}
+
+/* Begin CSS for tab Title */
+#menu-title{
+	background: #fff;
+	text-align: left;
+	border: 1px solid silver;
+	margin: 20px 0px 20px 0px;
+}
+
+.form-title{
+	margin:10px 5%;
+	padding-bottom: 20px;
+}
+.form-title a{
+	color: #fff;
+	background: #1bbc9b;
+}
+.form-title a:hover{
+	text-decoration: none;
+	color: #000;
+}
+
+#menu-title .form-title .group-tabs .tab-content #Title .row .Status .btn-group {
+	margin: 10px 0px 10px 0px;
+}
+
+
+/* End CSS for tab Title */
+
+/* Begin CSS for tab User */
+#menu-user{
+	background: #fff;
+	text-align: left;
+	border: 1px solid silver;
+	margin: 20px 0px 20px 0px;
+}
+
+.form-user{
+	margin:10px 5%;
+	padding-bottom: 20px;
+}
+.form-user a{
+	color: #fff;
+	background: #1bbc9b;
+}
+.form-user a:hover{
+	text-decoration: none;
+	color: #000;
+}
+#menu-user .form-user .group-tabs .tab-content #User .row .createuser .btn-group #role{
+	margin: 10px 0px 10px 0px;
+}

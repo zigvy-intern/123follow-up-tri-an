@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<title>Bootstrap Junior</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container container-max">
+		<header>
+			<div class="row header-top">
+				<div class="col-xs-4 col-sm-4 col-md-7 logo" > 
+					<h1><a href="#"><img src="img/logo.jpg" /></a></h1>
+				</div><!--logo-->
+				<nav class="col-xs-8 col-sm-8 col-md-5 header-menu navbar navbar-default" role="navigation">
+					<div class="navbar-header">
+			      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+			      		</button>
+			     	<!-- <a class="navbar-brand" href="#">Dashboard</a> -->
+			   		</div>
+			   		<div class="collapse navbar-collapse collapse-li" id="collapse">
+						<ul>
+							<li><a href="#">LOG OUT</a></li>
+							<li><a href="#">PROFILE</a></li>
+						</ul>
+					</div>
+				</nav><!--end header-menu -->
+			</div><!-- end header-top -->
+			<!-- <div class="row header-title"> -->
+				<!-- <div class="title col-xs-12">
+					<span class="bold white">Zigvy</span>
+					<span class="light white">Corporation</span>
+					<p class="regular white"> ADMINISTRATION </p>
+					<button class="button btn white">Register</button>
+					<p><a href="#"><img src="#"/></a></p>
+				</div> -->
+			<!-- </div>end header-title -->
+		</header><!-- end header -->
+		<section>
+			<div id = "corporation">
+				<div class="row corporation-title">
+					<h2 class="regular">Zigvy Corporation</h2>
+				</div>
+				<div class="row corporation-list-btn">
+					<div class="col-xs-12 col-sm-12 col-md-3 corporation-btn"><a class="btn button" href="{{route('title')}}">Dashboard</a></div>
+					<div class="col-xs-12 col-sm-12 col-md-3 corporation-btn"><a class="btn button" href="#">Account  </a></div>
+					<div class="col-xs-12 col-sm-12 col-md-3 corporation-btn"><a class="btn button" href="#">Manager</a></div>
+					<div class="col-xs-12 col-sm-12 col-md-3 corporation-btn"><a class="btn button" href="#">Contacts</a></div>
+				</div>
+				<!-- <div class="row corporation-list-icon">
+					<div class="col-xs-12 col-sm-6 col-md-3 corporation-icon">
+						<a href="#"><img src="#"></a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 corporation-icon">
+						<a href="#"><img src="#"></a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 corporation-icon">
+						<a href="#"><img src="#"></a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 corporation-icon">
+						<a href="#"><img src="#"></a>
+					</div>		
+				</div>
+				<div class="row corporation-list-icon">
+					<div class="col-xs-12 col-sm-6 col-md-3 corporation-icon">
+						<a href="#"><img src="#"></a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 corporation-icon">
+						<a href="#"><img src="#"></a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 corporation-icon">
+						<a href="#"><img src="#"></a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 corporation-icon">
+						<a href="#"><img src="#"></a>
+					</div>		
+				</div> -->
+			</div>
+		</section>
+			@yield('content')
+		<footer>
+			<div id = "contact">
+				<div class="row contact-title">
+					<h2 class="regular">Contact Us</h2>
+					<p class="bold black">zigvy@gmail.com</p>
+				</div>
+				<div class="row contact-form">
+					<div class="col-xs-12 col-sm-12 col-md-6 form-left">
+						<form method="post" class="form-group">
+							<input class="form-control" type="text" placeholder="Your Name" required name="">
+							<input class="form-control form-email" type="email" placeholder="Your Email" required name="">
+							<textarea rows="5" class="form-control" placeholder="Your Messenger"></textarea>
+							<button class="btn button" type="submit">Submit</button>
+						</form>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-6 form-right">
+						<p class="bold black" >ZIGVY INFORMATION</p>
+						<p class="regular">Zigvy Corporation<br />
+										38 Nguyen Van Troi , Phu Nhuan Dict<br />	
+										Ho Chi Minh City<br /></p>
+						<p class="regular">+84 (Phone) 123456 </p>
+						<p class="regular">(Email) zigvy@gmail.com </p>
+
+					</div>
+				</div>
+			</div>	
+				<div class="row footer">
+					<div class="col-xs-12 col-sm-6 footer-left">
+						<p class="regular">® Copyright 2017 Zigvy </p>
+					</div>
+					<div class="col-xs-12 col-sm-6 footer-right">
+						<a href="#header" class="glyphicon glyphicon-chevron-up"></a>
+					</div>
+				</div>
+		</footer>
+	</div>
+
+</body>
+</html>
