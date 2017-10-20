@@ -20,6 +20,7 @@
         <div role="tabpanel" class="tab-pane active" id="Title">
           <div class="row">
             <div class="Status">
+
               <div class="btn-group" onkeyup="onFilter(this)">
                  <select name="sta" id="sta" class="form-control">
                     <option value="Active" id="active" name="active">Active</option>
@@ -34,18 +35,20 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="myModalLabel">Add new Title</h4>
+                        <h4 class="modal-title" id="title-modal-text">Add new Title</h4>
                       </div>
                       <div class="modal-body">
+                        <input type="hidden" name="id">
                         <div class="row">
                           <form method="post" id="insert_form">
                             <div class="form-group">
                               <label>Title Name</label>
-                              <input type="text" name="title" id="title_name" class="form-control" />
+                              <input type="text" name="title" id="title-name" class="form-control" />
                             </div>
                             <div class="form-group">
                               <label>Status</label>
-                              <select name="status" id="status" class="form-control">
+                              <select name="status" id="title-status" class="form-control">
+                                <option disabled selected value="none">Select status</option>
                                 <option value="Active">Active</option>
                                 <option value="Inactive">Inactive</option>
                              </select>
@@ -83,12 +86,12 @@
                
                 <tbody>
                   @foreach($title as $t)
-                    <tr>
+                    <tr id="tr-title-{{$t->id}}" data-title-id="{{$t->id}}">
                       <td>{{ $t-> id }}</td>
-                      <td>{{ $t->title_name }}</td>
-                      <td>{{ $t->status }} </td>
+                      <td class='title-name'>{{ $t->title_name }}</td>
+                      <td class='title-status'>{{ $t->status }} </td>
                       <td>{{ $t->created_at }} </td>
-                      <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button> <button class="btn btn-default" id="delete" type="button"><i class="glyphicon glyphicon-remove"></i></button> </td>
+                      <td><button class="btn btn-default" onclick="editTitle(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button> <button class="btn btn-default" id="delete" type="button"><i class="glyphicon glyphicon-remove"></i></button> </td>
                     </tr>
                   @endforeach
                 </tbody>
