@@ -80,15 +80,7 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tfoot>
-                  <tr>
-                    <th>ID</th>
-                    <th>Tên Title</th>
-                    <th>Status</th>
-                    <th>Created_at</th>
-                    <th>Action</th>
-                  </tr>
-                </tfoot>
+               
                 <tbody>
                   @foreach($title as $t)
                     <tr>

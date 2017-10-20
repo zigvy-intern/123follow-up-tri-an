@@ -7,15 +7,17 @@
     <div class="group-tabs">
       <!--Nav tab-->
       <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active">
+          <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation">
               <a class="btn button" href="{{route('title')}}"><span>Title</span></a>
           </li>
           <li role="presentation">
-              <a class="btn button" href="{{route('group')}}" ><span>Group</span></a>
+              <a class="btn button" href="{{route('group')}}"><span>Group</span></a>
           </li>
           <li role="presentation">
-              <a href="{{route('user')}}" aria-controls="User" role="tab" data-toggle="tab">User</a>
+              <a class="btn button" href="{{route('user')}}"><span>User</span></a>
           </li>
+      </ul>
       </ul>
       <div role="tabpane2" class="tab-pane" id="Group">
         <div class="row-1">
