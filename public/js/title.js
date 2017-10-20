@@ -1,5 +1,10 @@
 $(function() {
-  console.log( "ready!" );
+  $('#myTitle').on('hidden.bs.modal', function (e) {
+    $('#myTitle #title-name').val('');
+    $('#myTitle #title-status').val('none');
+    $('#title-modal-text').text('Add new Title');
+    $('#myTitle input[name=id]').val("");
+  });
 });
 
 const submitCreateTitle = function(){
@@ -53,6 +58,21 @@ const onHandleSearch = function(el){
 //   var row = $('#title-list tr:not(:first)');
 // });
 
+
+const editTitle = function(e) {
+  $('#myTitle').modal('show');
+  const titleName = $(e).parents('tr').find('.title-name').text().trim();
+  const titleStatus = $(e).parents('tr').find('.title-status').text().trim();
+  const titleId = $(e).parents('tr').data('title-id');
+  $('#myTitle #title-name').val(titleName);
+  $('#myTitle #title-status').val(titleStatus);
+  $('#title-modal-text').text('Edit Title');
+  $('#myTitle input[name=id]').val(titleId);
+}
+
+const submitEditTitle = function(){
+  
+}
 
 const TitleClass = function() {
 
