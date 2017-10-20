@@ -1,6 +1,7 @@
 @extends('master')
 @section('content')
-<script src="js/createtitle.js"></script>
+<script src="js/title.js"></script>
+
 <div id="menu-title">
   <div class="form-title">
     <div class="group-tabs">
@@ -10,7 +11,7 @@
               <a class="btn button" href="{{route('title')}}"><span>Title</span></a>
           </li>
           <li role="presentation">
-              <a class="btn button" href="#"><span>Group</span></a>
+              <a class="btn button" href="{{route('group')}}"><span>Group</span></a>
           </li>
           <li role="presentation">
               <a class="btn button" href="{{route('user')}}"><span>User</span></a>
@@ -20,7 +21,7 @@
         <div role="tabpanel" class="tab-pane active" id="Title">
           <div class="row">
             <div class="Status">
-              <div class="btn-group">
+              <div class="btn-group" onkeyup="onFilter(this)">
                  <select name="sta" id="sta" class="form-control">
                     <option value="Active">Active</option>
                     <option value="Inactive">Inactive</option>

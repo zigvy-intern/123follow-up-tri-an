@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Group;
 use App\Title;
 use Hash;
 
@@ -20,6 +21,11 @@ class AdminController extends Controller
     {
         $title = Title::all();
         return view('admin.title', compact('title'));
+    }
+    public function getGroup()
+    {
+        $group = Group::all();
+        return view('admin.group', compact('group'));
     }
 
     public function getUser()
