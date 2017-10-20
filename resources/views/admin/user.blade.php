@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-
+<script src="js/user.js"></script>
 <div id="menu-user">
   <div class="form-user">
     <div class="group-tabs">
@@ -69,7 +69,7 @@
               </div>
               <form action="" class="navbar-form navbar-right" method="post">
                 <div class="form-group input-group">
-                  <input type="text" class="form-control">
+                  <input type="text" onkeyup="onUserSearch(this)" class="form-control">
                   <span class="input-group-btn">
                     <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
                   </span>
@@ -91,13 +91,14 @@
                 <tbody>
                   @foreach($user as $u)
                     <tr>
-                      <th>{{ $u-> id }}</th>
-                      <th>{{ $u->name }}</th>
-                      <th>{{ $u->email }} </th>
-                      <th>{{ $u->password }} </th>
-                      <th>{{ $u->created_at }} </th>
-                      <th><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
-                          <button class="btn btn-default" id="delete" type="button"><i class="glyphicon glyphicon-remove"></i></button> </th>
+                      <td>{{ $u-> id }}</td>
+                      <td>{{ $u->name }}</td>
+                      <td>{{ $u->email }} </td>
+                      <td>{{ $u->password }} </td>
+                      <td>{{ $u->created_at }} </td>
+                      <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
+                          <button class="btn btn-default" id="delete" type="button"><i class="glyphicon glyphicon-remove"></i></button>
+                      </td>
                     </tr>
                   @endforeach
                 </tbody>

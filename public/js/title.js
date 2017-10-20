@@ -37,29 +37,21 @@ const onHandleSearch = function(el){
     const patt = new RegExp(textSearch, 'ig');
     if(patt.test(content.trim())){
       $(row).show();
-    }
-  })
-}
-
-const onFilter = function(index){
-var option, filter, table, tr, td, i;
-  option = document.getElementById("status");
-  filter = option.value.toUpperCase();
-  table = document.getElementById("title");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
       }
-    } 
-  }
+    })
+    $('button').click(function (event) {
+      event.preventDefault()
+  });
 }
+
+// $(document).ready(function(){
+//   function addRemoveClass(theRow){
+//     theRow.romoveClass("odd even");
+//     theRow.filter(":odd").addClass("odd");
+//     theRow.filter(":even").addClass("even");
+//   }
+//   var row = $('#title-list tr:not(:first)');
+// });
 
 
 const TitleClass = function() {

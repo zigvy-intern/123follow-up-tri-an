@@ -46,12 +46,4 @@ class AdminController extends Controller
     //
     //     echo json_encode(User::find($user_id));
     // }
-
-    public function getSearch(Request $req)
-    {
-        $search = User::where('name', 'like', '%'.$req->key.'%')
-                          ->orWhere('email', $req->key)
-                          ->get();
-        return view('page.search', compact('search'));
-    }
 }

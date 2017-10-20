@@ -1,7 +1,6 @@
 @extends('master')
 @section('content')
 <script src="js/title.js"></script>
-
 <div id="menu-title">
   <div class="form-title">
     <div class="group-tabs">
@@ -23,8 +22,8 @@
             <div class="Status">
               <div class="btn-group" onkeyup="onFilter(this)">
                  <select name="sta" id="sta" class="form-control">
-                    <option value="Active">Active</option>
-                    <option value="Inactive">Inactive</option>
+                    <option value="Active" id="active" name="active">Active</option>
+                    <option value="Inactive" id="inactive" name="inactive">Inactive</option>
                     <option value="All">All</option>
                  </select>
                 </div>
@@ -81,6 +80,15 @@
                     <th>Action</th>
                   </tr>
                 </thead>
+                <tfoot>
+                  <tr>
+                    <th>ID</th>
+                    <th>Tên Title</th>
+                    <th>Status</th>
+                    <th>Created_at</th>
+                    <th>Action</th>
+                  </tr>
+                </tfoot>
                 <tbody>
                   @foreach($title as $t)
                     <tr>
