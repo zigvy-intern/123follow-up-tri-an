@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Title;
-
+use App\Group;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,3 +19,5 @@ use App\Title;
 // });
 
 Route::post('title-create', 'TitleController@postCreateTitle');
+Route::post('group-create', 'GroupController@store');
+Route::post('user-create', 'UserController@store');

@@ -256,3 +256,7 @@ body{background: #000;}
 #menu-user .form-user .group-tabs .tab-content #User .row .createuser .btn-group #role{
 	margin: 10px 0px 10px 0px;
 }
+
+#menu-title .form-title .group-tabs #Group .row-1 .Group .btn-group {
+	margin: 10px 0px 10px 0px;
+}

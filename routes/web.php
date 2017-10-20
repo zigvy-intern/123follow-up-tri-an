@@ -77,3 +77,8 @@ Route::post('admin-register', [
     'as' => 'register',
     'uses'=>'RegisterController@postRegister'
 ]);
+
+Route::get('admin-group',[
+    'as' => 'group',
+    'uses' => 'AdminController@getGroup'
+]);
