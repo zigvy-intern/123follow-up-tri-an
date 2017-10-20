@@ -5,15 +5,17 @@
   <div class="form-user">
     <div class="group-tabs">
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation">
-            <a class="btn button" href="{{route('title')}}"><span>Title</span></a>
-        </li>
-        <li role="presentation">
-            <a class="btn button" href="#"><span>Group</span></a>
-        </li>
-        <li role="presentation">
-            <a class="btn button" href="{{route('user')}}"><span>User</span></a>
-        </li>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation">
+              <a class="btn button" href="{{route('title')}}"><span>Title</span></a>
+          </li>
+          <li role="presentation">
+              <a class="btn button" href="{{route('group')}}"><span>Group</span></a>
+          </li>
+          <li role="presentation">
+              <a class="btn button" href="{{route('user')}}"><span>User</span></a>
+          </li>
+      </ul>
       </ul>
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="User">
