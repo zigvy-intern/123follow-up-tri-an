@@ -82,3 +82,10 @@ Route::get('admin-group',[
     'as' => 'group',
     'uses' => 'AdminController@getGroup'
 ]);
+
+Route::get('del-title/{id}', [ 'as' => 'deleteTitle', 'uses' => 'DeleteController@getDeleleTitle'
+]);
+Route::get('del-user/{id}', [ 'as' => 'deleteUser', 'uses' => 'DeleteController@getDeleteUser'
+]);
+Route::get('del-group/{id}', [ 'as' => 'deleteGroup', 'uses' => 'DeleteController@getDeleteGroup'
+]);

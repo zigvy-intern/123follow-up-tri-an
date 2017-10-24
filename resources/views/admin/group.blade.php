@@ -11,7 +11,7 @@
           <li role="presentation">
               <a class="btn button" href="{{route('title')}}"><span>Title</span></a>
           </li>
-          <li role="presentation">
+          <li role="presentation" class="active">
               <a class="btn button" href="{{route('group')}}"><span>Group</span></a>
           </li>
           <li role="presentation">
@@ -22,14 +22,9 @@
       <div role="tabpane2" class="tab-pane" id="Group">
         <div class="row-1">
           <div class="Group">
-            <div class="btn-group">
-                 <select name="dropdowngroup" id="dropdowngroup" class="form-control">
-                      <option value="up">A->Z</option>
-                      <option value="down">Z->A</option>
-                      <option value="All">All</option>
-                 </select>
+            <div class="btn-group" onkeyup="onFilter(this)">
+              <button class="btn btn-primary " data-toggle="modal" data-target="#addgroup"><i class="glyphicon glyphicon-plus"></i></button>
             </div>
-            <button class="btn btn-primary " data-toggle="modal" data-target="#addgroup"><i class="glyphicon glyphicon-plus"></i></button>
             <div id="addgroup" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -89,9 +84,10 @@
               </div>
             </form>
             <div class="table">
-              <table id='group-list' class="table table-bordered">
+              <table id='group-list' class="table table-bordered" >
                 <thead>
                   <tr>
+                    <th>STT</th>
                     <th>ID</th>
                     <th>Tên Group</th>
                     <th>Tên Leader</th>
@@ -99,12 +95,16 @@
                     <th>Công việc</th>
                     <th>Create_Day</th>
                     <th>Deadline</th>
-                    <th>Action</th>
+                    <th>Sửa</th>
+                    <th>Xóa</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <?php $stt = 0 ?>
                   @foreach($group as $g)
+                  <?php $stt = $stt +1 ?>
                   <tr>
+                    <td>{{ $stt }}</td>
                     <td>{{ $g-> id }}</td>
                     <td>{{ $g-> group_name }}</td>
                     <td>{{ $g-> leader_name }}</td>
@@ -112,12 +112,24 @@
                     <td>{{ $g-> job_name }}</td>
                     <td>{{ $g-> create_day }}</td>
                     <td>{{ $g-> deadline }}</td>
-                    <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button> 
-                        <button class="btn btn-default" id="delete" type="button"><i class="glyphicon glyphicon-remove"></i></button> </td>
+                    <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button></td>
+                    <td>
+                      <button class="btn btn-default" id="delGroup" type="button"><a href="{{route('deleteGroup',$g->id)}}" class="glyphicon glyphicon-remove" ></a></button>
+                      </td>
+                      
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>
               </table>
+              <script>
+                $(document).ready(function(){
+                  $("#group-list").on('click','.delete',function(){
+                    $(this).closest('td').move();
+                  });
+                });
+
+              </script>
             </div>
           </div>
         </div>    

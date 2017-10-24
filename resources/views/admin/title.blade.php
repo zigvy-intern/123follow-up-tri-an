@@ -6,7 +6,7 @@
     <div class="group-tabs">
       <!--Nav tab-->
       <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation">
+          <li role="presentation" class="active">
               <a class="btn button" href="{{route('title')}}"><span>Title</span></a>
           </li>
           <li role="presentation">
@@ -22,10 +22,10 @@
             <div class="Status">
 
               <div class="btn-group" onkeyup="onFilter(this)">
-                 <select name="sta" id="sta" class="form-control">
-                    <option value="Active" id="active" name="active">Active</option>
-                    <option value="Inactive" id="inactive" name="inactive">Inactive</option>
-                    <option value="All">All</option>
+                 <select name="select-sta" id="select-sta" class="form-control">
+                  <option value="All" selected>All</option>
+                  <option value="Active" id="active" name="active">Active</option>
+                  <option value="Inactive" id="inactive" name="inactive">Inactive</option>      
                  </select>
                 </div>
                 <button class="btn btn-primary " data-toggle="modal" data-target="#myTitle" ><i class="glyphicon glyphicon-plus"></i></button>
@@ -38,12 +38,12 @@
                         <h4 class="modal-title" id="title-modal-text">Add new Title</h4>
                       </div>
                       <div class="modal-body">
-                        <input type="hidden" name="id">
                         <div class="row">
                           <form method="post" id="insert_form">
+                            <input type="hidden" name="id">
                             <div class="form-group">
                               <label>Title Name</label>
-                              <input type="text" name="title" id="title-name" class="form-control" />
+                              <input type="text" name="title_name" id="title-name" class="form-control" />
                             </div>
                             <div class="form-group">
                               <label>Status</label>
@@ -57,7 +57,7 @@
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" onclick="submitCreateTitle()" name="insert" id="insert" value="Insert" class="btn btn-success"> Add</button>
+                        <button type="button" onclick="submitTitle()" name="insert" id="insert" value="Insert" class="btn btn-success"> Add</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                       </div>
                     </div>
@@ -65,7 +65,7 @@
                 </div>
                 <form action="" class="navbar-form navbar-right" method="post">
                   <div class="form-group input-group">
-                    <input type="text" onkeyup="onHandleSearch(this)" class="form-control">
+                    <input type="text" id="edit-title-button" onkeyup="onHandleSearch(this)" class="form-control">
                     <span class="input-group-btn">
                       <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
                     </span>
@@ -86,12 +86,12 @@
                
                 <tbody>
                   @foreach($title as $t)
-                    <tr id="tr-title-{{$t->id}}" data-title-id="{{$t->id}}">
+                    <tr position="{{$t->status}}" id="tr-title-{{$t->id}}" data-title-id="{{$t->id}}" >
                       <td>{{ $t-> id }}</td>
                       <td class='title-name'>{{ $t->title_name }}</td>
                       <td class='title-status'>{{ $t->status }} </td>
                       <td>{{ $t->created_at }} </td>
-                      <td><button class="btn btn-default" onclick="editTitle(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button> <button class="btn btn-default" id="delete" type="button"><i class="glyphicon glyphicon-remove"></i></button> </td>
+                      <td><button class="btn btn-default" onclick="editTitle(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button> <button class="btn btn-default" id="delete" type="button"><a class="glyphicon glyphicon-remove" href="{{route('deleteTitle',$t->id)}}"></a></button> </td>
                     </tr>
                   @endforeach
                 </tbody>

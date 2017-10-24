@@ -4,16 +4,26 @@ $(function() {
     $('#myTitle #title-status').val('none');
     $('#title-modal-text').text('Add new Title');
     $('#myTitle input[name=id]').val("");
+    $('#insert').text('Add');
+
   });
 });
 
-const submitCreateTitle = function(){
+const submitTitle = function(){
   let data = {};
   $.each($('#insert_form').serializeArray(), function(index, row){
     data[row.name] = row.value;
   });
-  $.post(API.title.create, data, function(response){
-    appendToTitle(JSON.parse(response));
+  let url = '';
+  if(data.id.trim() === "" )
+    url = API.title.create;
+  else
+    url = API.title.edit;
+  $.post(url, data, function(response){
+    if(data.id.trim() === "" )
+      appendToTitle(JSON.parse(response));
+    else
+      updateTitleRecord(JSON.parse(response));
     $('#myTitle').modal('hide');
   });
 
@@ -48,7 +58,6 @@ const onHandleSearch = function(el){
       event.preventDefault()
   });
 }
-
 // $(document).ready(function(){
 //   function addRemoveClass(theRow){
 //     theRow.romoveClass("odd even");
@@ -58,6 +67,27 @@ const onHandleSearch = function(el){
 //   var row = $('#title-list tr:not(:first)');
 // });
 
+$(document).ready(function(){
+  function addRemoveClass(theRow){
+    theRow.removeClass('odd even');
+    theRow.filter(':odd').addClass('odd');
+    theRow.filter(':even').addClass('even');
+  }
+  var row = $('table#title-list tr');
+  addRemoveClass(row);
+  $('#select-sta').on('change',function(){
+    var select = this.value;
+    if(select !='All'){
+      row.filter('[position='+select+']').show();
+      row.not('[position='+select+']').hide();
+      var visibldeRow = row.filter('[position='+select+']');
+      addRemoveClass(visibldeRow);
+    }else{
+      row.show();
+      addRemoveClass(row);
+    }
+  });
+});
 
 const editTitle = function(e) {
   $('#myTitle').modal('show');
@@ -68,10 +98,12 @@ const editTitle = function(e) {
   $('#myTitle #title-status').val(titleStatus);
   $('#title-modal-text').text('Edit Title');
   $('#myTitle input[name=id]').val(titleId);
+  $('#insert').text('Edit');
 }
 
-const submitEditTitle = function(){
-  
+const updateTitleRecord = function(title){
+  $(`#tr-title-${title.id}`).find('.title-name').text(title.title_name);
+  $(`#tr-title-${title.id}`).find('.title-status').text(title.status);
 }
 
 const TitleClass = function() {

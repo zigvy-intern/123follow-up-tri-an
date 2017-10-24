@@ -19,5 +19,7 @@ use App\Group;
 // });
 
 Route::post('title-create', 'TitleController@postCreateTitle');
+Route::post('title-edit', 'TitleController@postEditTitle');
+
 Route::post('group-create', 'GroupController@store');
 Route::post('user-create', 'UserController@store');
