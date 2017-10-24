@@ -12,7 +12,7 @@
           <li role="presentation">
               <a class="btn button" href="{{route('group')}}"><span>Group</span></a>
           </li>
-          <li role="presentation">
+          <li role="presentation" class="active">
               <a class="btn button" href="{{route('user')}}"><span>User</span></a>
           </li>
       </ul>
@@ -82,6 +82,7 @@
               <table id='user-list' class="table table-bordered table-hover">
                 <thead>
                   <tr>
+                    <th>STT</th>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
@@ -91,15 +92,19 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php $stt = 0 ?>
                   @foreach($user as $u)
+                  <?php $stt = $stt +1 ?>
                     <tr>
+                      <th>{{$stt}}
                       <td>{{ $u-> id }}</td>
                       <td>{{ $u->name }}</td>
                       <td>{{ $u->email }} </td>
                       <td>{{ $u->password }} </td>
                       <td>{{ $u->created_at }} </td>
                       <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
-                          <button class="btn btn-default" id="delete" type="button"><i class="glyphicon glyphicon-remove"></i></button>
+                          <button class="btn btn-default" id="delUser" type="button"><a href="{{route('deleteUser',$u->id)}}" class="glyphicon glyphicon-remove" ></a></button>
+                      </td>
                       </td>
                     </tr>
                   @endforeach

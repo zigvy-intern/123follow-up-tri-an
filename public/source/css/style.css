@@ -217,9 +217,12 @@ body{background: #000;}
 	margin:10px 5%;
 	padding-bottom: 20px;
 }
-.form-title a{
+.form-title button{
 	color: #fff;
 	background: #1bbc9b;
+}
+.form-title a{
+	color: #fff;	
 }
 .form-title a:hover{
 	text-decoration: none;
