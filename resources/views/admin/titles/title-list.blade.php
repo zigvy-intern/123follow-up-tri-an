@@ -1,5 +1,3 @@
-@extends('master')
-@section('content')
 <script src="js/title.js"></script>
 <div id="menu-title">
   <div class="form-title">
@@ -7,25 +5,24 @@
       <!--Nav tab-->
       <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active">
-              <a class="btn button" href="{{route('title')}}"><span>Title</span></a>
+              <a class="btn button"><span>Title</span></a>
           </li>
           <li role="presentation">
-              <a class="btn button" href="{{route('group')}}"><span>Group</span></a>
+              <a class="btn button"><span>Group</span></a>
           </li>
           <li role="presentation">
-              <a class="btn button" href="{{route('user')}}"><span>User</span></a>
+              <a class="btn button"><span>User</span></a>
           </li>
       </ul>
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="Title">
           <div class="row">
             <div class="Status">
-
               <div class="btn-group" onkeyup="onFilter(this)">
                  <select name="select-sta" id="select-sta" class="form-control">
                   <option value="All" selected>All</option>
                   <option value="Active" id="active" name="active">Active</option>
-                  <option value="Inactive" id="inactive" name="inactive">Inactive</option>      
+                  <option value="Inactive" id="inactive" name="inactive">Inactive</option>
                  </select>
                 </div>
                 <button class="btn btn-primary " data-toggle="modal" data-target="#myTitle" ><i class="glyphicon glyphicon-plus"></i></button>
@@ -83,7 +80,7 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-               
+
                 <tbody>
                   @foreach($title as $t)
                     <tr position="{{$t->status}}" id="tr-title-{{$t->id}}" data-title-id="{{$t->id}}" >
@@ -103,5 +100,3 @@
     </div>
   </div>
 </div>
-
-@endsection

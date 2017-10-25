@@ -9,6 +9,8 @@
 	<title>Bootstrap </title>
 	<link rel="stylesheet" href="source/css/bootstrap.css">
 	<link rel="stylesheet" href="source/css/style.css">
+	<link rel="stylesheet" href="source/css/profile.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 	<script src="source/js/jquery-3.2.1.min.js"></script>
 	<script src="source/js/bootstrap.js"></script>
 	<script src="source/js/api.js"></script>

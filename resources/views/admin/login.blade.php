@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="container">
-		
+
      	<form action=""" method="POST" class="form-login" >
      		<input type="hidden" name="_token" value="{{csrf_token()}}">
      		@include('admin.errors.error')
@@ -24,7 +24,7 @@
        			<label class="checkbox">
          		<input type="checkbox" value="remember-me"> Remember me </label>
         	<button class="btn btn-block btn-success btn-rad btn-lg" data-dismiss="modal"> Login</button>
-       	 	<a class="btn btn-block btn-success btn-rad btn-lg" href="{{route('register')}}"> Register </a>
+       	 	<!-- <a class="btn btn-block btn-success btn-rad btn-lg" href="{{route('register')}}"> Register </a> -->
       	</form>
     </div> <!-- /container -->
     <div class="text-center out-links"><a href="{{route('login')}}">&copy; 2017 Zigvy Corporation</a></div>
