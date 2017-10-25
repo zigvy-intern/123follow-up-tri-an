@@ -1,7 +1,4 @@
-@extends('master')
-@section('content')
 <script src="js/group.js"></script>
-
 <div id="menu-title">
   <div class="form-title">
     <div class="group-tabs">
@@ -9,13 +6,13 @@
       <ul class="nav nav-tabs" role="tablist">
           <ul class="nav nav-tabs" role="tablist">
           <li role="presentation">
-              <a class="btn button" href="{{route('title')}}"><span>Title</span></a>
+              <a class="btn button"><span>Title</span></a>
           </li>
           <li role="presentation" class="active">
-              <a class="btn button" href="{{route('group')}}"><span>Group</span></a>
+              <a class="btn button"><span>Group</span></a>
           </li>
           <li role="presentation">
-              <a class="btn button" href="{{route('user')}}"><span>User</span></a>
+              <a class="btn button"><span>User</span></a>
           </li>
       </ul>
       </ul>
@@ -116,7 +113,7 @@
                     <td>
                       <button class="btn btn-default" id="delGroup" type="button"><a href="{{route('deleteGroup',$g->id)}}" class="glyphicon glyphicon-remove" ></a></button>
                       </td>
-                      
+
                     </td>
                   </tr>
                   @endforeach
@@ -132,11 +129,8 @@
               </script>
             </div>
           </div>
-        </div>    
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-
-   @endsection     

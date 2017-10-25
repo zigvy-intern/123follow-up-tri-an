@@ -1,6 +1,7 @@
 @extends('master')
 @section('content')
 <script src="js/user.js"></script>
+@include('accordion')
 <div id="menu-user">
   <div class="form-user">
     <div class="group-tabs">

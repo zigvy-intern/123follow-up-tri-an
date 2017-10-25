@@ -20,7 +20,7 @@ class AdminController extends Controller
     public function getTitle()
     {
         $title = Title::all();
-        return view('admin.title', compact('title'));
+        return view('admin.accountSettings', compact('title'));
     }
     public function getGroup()
     {
@@ -34,16 +34,9 @@ class AdminController extends Controller
         return view('admin.user', compact('user'));
     }
 
-    // public function postCreateUser(Request $req)
-    // {
-    //     $user = new User();
-    //     $user->name = $req->name;
-    //     $user->email = $req->email;
-    //     $user->password = $req->password;
-    //     $user->re_password = $req->re_password;
-    //     $user->save();
-    //     $user_id = $user->id;
-    //
-    //     echo json_encode(User::find($user_id));
-    // }
+    public function getProfileUser()
+    {
+        $profile = User::all();
+        return view('admin.profile', compact('profile'));
+    }
 }

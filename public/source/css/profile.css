@@ -1,0 +1,25 @@
+#profile-image {
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+	  border:1px solid ;
+}
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+    margin: 10px 0px 10px 0px;
+}
+.toppad {
+    margin: 20px 0px 0px 0px;
+}
+.panel-body {
+    margin-bottom: 70px;
+}
+.panel-footer {
+    text-align: right;
+}

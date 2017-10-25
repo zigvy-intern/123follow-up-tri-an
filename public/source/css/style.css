@@ -34,6 +34,7 @@ body{background: #000;}
 	width: 100%;
 	height: 100%;
 	margin-top: 10px;
+
 }
 .header-top{
 	background: #fff;
@@ -79,7 +80,7 @@ body{background: #000;}
 	padding: 20px 0px;
 }
 .button{
-	background: #1bbc9b;
+	background: #A9A9A9;
 }
 /* End CSS for header-title */
 
@@ -87,6 +88,8 @@ body{background: #000;}
 #corporation{
 	background: #fff;
 	text-align: center;
+	border: 2px solid #fff;
+	border-radius: 0px 0px 5px 5px;
 }
 .corporation-title{
 	padding-bottom: 30px;
@@ -95,7 +98,7 @@ body{background: #000;}
 	font-size: 0px;
 }
 .corporation-list-btn{
-	margin:0 30%;
+	margin:0px 20px 0px 200px;
 	padding-bottom: 20px;
 
 }
@@ -103,7 +106,8 @@ body{background: #000;}
 	padding: 5px 0px;
 }
 .corporation-btn a{
-	color: #fff;
+		color: #fff;
+	font-size: 16px;
 }
 .corporation-btn a:hover{
 	color: #000;
@@ -174,6 +178,9 @@ body{background: #000;}
 .footer{
 	background: #2d3e50;
 	padding:5px 0px;
+	border: 2px solid #2d3e50;
+	border-radius: 5px;
+	margin-top: 10px;
 }
 .footer-left{
 	font-size: 14px;
@@ -181,13 +188,6 @@ body{background: #000;}
 }
 .footer-left p{
 	line-height: 45px;
-}
-.footer-right a{
-	background: #1bbc9b;
-	color: #fff;
-	float: right;
-	padding: 15px;
-	text-decoration: none;
 }
 .footer-right a:hover{
 	color: #000;
@@ -206,38 +206,36 @@ body{background: #000;}
 }
 
 /* Begin CSS for tab Title */
+#accordion{
+	margin: 10px 0px 10px 0px;
+}
 #menu-title{
+	transform: translateX(+12%);
+	width: 80%;
 	background: #fff;
 	text-align: left;
 	border: 1px solid silver;
-	margin: 20px 0px 20px 0px;
+	border-radius: 0px 0px 5px 5px;
 }
 
 .form-title{
 	margin:10px 5%;
 	padding-bottom: 20px;
 }
-.form-title button{
-	color: #fff;
-	background: #1bbc9b;
-}
 .form-title a{
-	color: #fff;	
+	color: #000;
 }
 .form-title a:hover{
 	text-decoration: none;
 	color: #000;
 }
 
-#menu-title .form-title .group-tabs .tab-content #Title .row .Status .btn-group {
-	margin: 10px 0px 10px 0px;
-}
-
-
 /* End CSS for tab Title */
 
 /* Begin CSS for tab User */
 #menu-user{
+	transform: translateX(+12%);
+	width: 80%;
 	background: #fff;
 	text-align: left;
 	border: 1px solid silver;
@@ -249,17 +247,36 @@ body{background: #000;}
 	padding-bottom: 20px;
 }
 .form-user a{
-	color: #fff;
-	background: #1bbc9b;
+	color: #000;
 }
 .form-user a:hover{
 	text-decoration: none;
 	color: #000;
 }
+#menu-title .form-title .group-tabs .tab-content #Title .row .Status .btn-group {
+	margin: 10px 0px 10px 0px;
+}
 #menu-user .form-user .group-tabs .tab-content #User .row .createuser .btn-group #role{
 	margin: 10px 0px 10px 0px;
 }
-
 #menu-title .form-title .group-tabs #Group .row-1 .Group .btn-group {
 	margin: 10px 0px 10px 0px;
 }
+/* Begin CSS for accordion */
+button.accordion:after {
+  content: '\f055';
+  font-family: "fontawesome";
+  font-size: 14px;
+  float: right;
+}
+
+button.accordion.is-open:after {
+  content: '\f056';
+}
+
+button.accordion:hover, button.accordion.is-open {
+  background-color: #A9A9A9;
+  border: 2px solid #A9A9A9;
+}
+
+/* End CSS for accordion */

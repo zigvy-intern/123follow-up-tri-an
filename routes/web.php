@@ -43,49 +43,27 @@ Route::group(['middleware' => 'auth'], function () {
     });
 });
 
-Route::get('admin-title', [
-    'as' => 'title',
-    'uses' => 'AdminController@getTitle'
+Route::get('admin-title', [ 'as' => 'title', 'uses' => 'AdminController@getTitle'
 ]);
-
-Route::get('admin-user', [
-    'as' => 'user',
-    'uses' => 'AdminController@getUser'
+Route::get('admin-user', [ 'as' => 'user', 'uses' => 'AdminController@getUser'
 ]);
-
-Route::get('admin-login', [
-    'as' => 'login',
-    'uses' => 'LoginController@getLogin'
+Route::get('admin-group', [ 'as' => 'group', 'uses' => 'AdminController@getGroup'
 ]);
-
-Route::post('admin-login', [
-    'as' => 'login',
-    'uses' => 'LoginController@postLogin'
+Route::get('admin-login', [ 'as' => 'login', 'uses' => 'LoginController@getLogin'
 ]);
-
-Route::get('admin-logout', [
-    'as' => 'logout',
-    'uses' => 'LoginController@getLogout'
+Route::post('admin-login', [ 'as' => 'login', 'uses' => 'LoginController@postLogin'
 ]);
-
-Route::get('admin-register', [
-    'as' => 'register',
-    'uses' => 'RegisterController@getRegister'
+Route::get('admin-logout', [ 'as' => 'logout', 'uses' => 'LoginController@getLogout'
 ]);
-
-Route::post('admin-register', [
-    'as' => 'register',
-    'uses'=>'RegisterController@postRegister'
+Route::get('admin-register', [ 'as' => 'register', 'uses' => 'RegisterController@getRegister'
 ]);
-
-Route::get('admin-group',[
-    'as' => 'group',
-    'uses' => 'AdminController@getGroup'
+Route::post('admin-register', [ 'as' => 'register', 'uses'=>'RegisterController@postRegister'
 ]);
-
 Route::get('del-title/{id}', [ 'as' => 'deleteTitle', 'uses' => 'DeleteController@getDeleleTitle'
 ]);
 Route::get('del-user/{id}', [ 'as' => 'deleteUser', 'uses' => 'DeleteController@getDeleteUser'
 ]);
 Route::get('del-group/{id}', [ 'as' => 'deleteGroup', 'uses' => 'DeleteController@getDeleteGroup'
+]);
+Route::get('profile-user', [ 'as'=> 'profileUser',  'uses'=>'AdminController@getProfileUser'
 ]);
