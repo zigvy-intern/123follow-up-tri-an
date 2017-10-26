@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE-edge">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale-1, user-scalable=0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 	<title>Bootstrap </title>
 	<link rel="stylesheet" href="source/css/bootstrap.css">
 	<link rel="stylesheet" href="source/css/style.css">

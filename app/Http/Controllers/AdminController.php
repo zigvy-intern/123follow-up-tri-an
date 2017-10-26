@@ -16,24 +16,28 @@ class AdminController extends Controller
     {
         return view('admin.index');
     }
-
     public function getTitle()
     {
         $title = Title::all();
-        return view('admin.accountSettings', compact('title'));
+        return view('admin.titles.title-list', compact('title'));
     }
     public function getGroup()
     {
         $group = Group::all();
-        return view('admin.group', compact('group'));
+        return view('admin.groups.group-list', compact('group'));
     }
-
     public function getUser()
     {
         $user = User::all();
-        return view('admin.user', compact('user'));
+        return view('admin.users.user-list', compact('user'));
     }
-
+    public function getAccountSetting()
+    {
+        $title = Title::all();
+        $group = Group::all();
+        $user = User::all();
+        return view('admin.accountSettings', compact('title', 'group', 'user'));
+    }
     public function getProfileUser()
     {
         $profile = User::all();

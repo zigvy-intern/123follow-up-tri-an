@@ -11,7 +11,7 @@ $(function() {
 
 const submitTitle = function(){
   let data = {};
-  $.each($('#insert_form').serializeArray(), function(index, row){
+  $.each($('#insert-form').serializeArray(), function(index, row){
     data[row.name] = row.value;
   });
   let url = '';
@@ -36,7 +36,7 @@ const appendToTitle = function(title){
     <td>${title.status } </td>
     <td>${title.created_at } </td>
     <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
-        <button class="btn btn-default" id="delete" type="button"><i class="glyphicon glyphicon-remove"></i></button> </th>
+        <button class="btn btn-default" id="delete" type="button"><i class="glyphicon glyphicon-remove"></i></button> </td>
     </tr>`;
   $('#title-list').append(html);
 }
@@ -52,20 +52,9 @@ const onHandleSearch = function(el){
     const patt = new RegExp(textSearch, 'ig');
     if(patt.test(content.trim())){
       $(row).show();
-      }
-    })
-    $('button').click(function (event) {
-      event.preventDefault()
-  });
+    }
+  })
 }
-// $(document).ready(function(){
-//   function addRemoveClass(theRow){
-//     theRow.romoveClass("odd even");
-//     theRow.filter(":odd").addClass("odd");
-//     theRow.filter(":even").addClass("even");
-//   }
-//   var row = $('#title-list tr:not(:first)');
-// });
 
 $(document).ready(function(){
   function addRemoveClass(theRow){
