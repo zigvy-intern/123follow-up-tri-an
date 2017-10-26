@@ -206,60 +206,31 @@ body{background: #000;}
 }
 
 /* Begin CSS for tab Title */
-#accordion{
+#accordion {
+	margin: 0px 30px 0px 30px;
+}
+#accordion .panel {
+	margin-top: 10px;
+}
+#user-list{
+	margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+	overflow-x: auto;
+}
+#user-list th{
+	margin: auto;
+  text-align: left;
+  padding: 8px;
+}
+#title .row .Status .btn-group {
 	margin: 10px 0px 10px 0px;
 }
-#menu-title{
-	transform: translateX(+12%);
-	width: 80%;
-	background: #fff;
-	text-align: left;
-	border: 1px solid silver;
-	border-radius: 0px 0px 5px 5px;
-}
-
-.form-title{
-	margin:10px 5%;
-	padding-bottom: 20px;
-}
-.form-title a{
-	color: #000;
-}
-.form-title a:hover{
-	text-decoration: none;
-	color: #000;
-}
-
-/* End CSS for tab Title */
-
-/* Begin CSS for tab User */
-#menu-user{
-	transform: translateX(+12%);
-	width: 80%;
-	background: #fff;
-	text-align: left;
-	border: 1px solid silver;
-	margin: 20px 0px 20px 0px;
-}
-
-.form-user{
-	margin:10px 5%;
-	padding-bottom: 20px;
-}
-.form-user a{
-	color: #000;
-}
-.form-user a:hover{
-	text-decoration: none;
-	color: #000;
-}
-#menu-title .form-title .group-tabs .tab-content #Title .row .Status .btn-group {
+#user .row .createuser .btn-group #role{
 	margin: 10px 0px 10px 0px;
 }
-#menu-user .form-user .group-tabs .tab-content #User .row .createuser .btn-group #role{
-	margin: 10px 0px 10px 0px;
-}
-#menu-title .form-title .group-tabs #Group .row-1 .Group .btn-group {
+#group .row-1 .Group .btn-group {
 	margin: 10px 0px 10px 0px;
 }
 /* Begin CSS for accordion */

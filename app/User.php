@@ -30,4 +30,13 @@ class User extends Authenticatable
     ];
 
     public $timestamps = true;
+
+    public function Group()
+    {
+        return $this->belongsTo('App\Group', 'id', 'id');
+    }
+    public function Role()
+    {
+        return $this->belongsTo('App\Role', 'id', 'id');
+    }
 }

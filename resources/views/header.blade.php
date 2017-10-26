@@ -24,7 +24,7 @@
 <section>
 	<div id = "corporation">
 		<div class="row corporation-list-btn">
-			<div class="col-xs-3 corporation-btn"><a class="btn button " href="{{route('title')}}"><i class="glyphicon glyphicon-home"></i><span> Accout Setting </span></a></div>
+			<div class="col-xs-3 corporation-btn"><a class="btn button " href="{{route('accountSetting')}}"><i class="glyphicon glyphicon-home"></i><span> Accout Setting </span></a></div>
 			<div class="col-xs-3 corporation-btn"><a class="btn button" href="#"><i class="glyphicon glyphicon-user"></i><span> Agency</span></a></div>
 			<div class="col-xs-3 corporation-btn"><a class="btn button" href="#"><i class="glyphicon glyphicon-book"></i><span>  Booking Tour</span></a></div>
 			<div class="col-xs-3 corporation-btn"><a class="btn button" href="#"><i class="glyphicon glyphicon-phone-alt"></i><span> Contacts</span></a></div>

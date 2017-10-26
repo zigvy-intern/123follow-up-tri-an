@@ -49,6 +49,8 @@ Route::get('admin-user', [ 'as' => 'user', 'uses' => 'AdminController@getUser'
 ]);
 Route::get('admin-group', [ 'as' => 'group', 'uses' => 'AdminController@getGroup'
 ]);
+Route::get('admin-account', [ 'as' => 'accountSetting', 'uses' => 'AdminController@getAccountSetting'
+]);
 Route::get('admin-login', [ 'as' => 'login', 'uses' => 'LoginController@getLogin'
 ]);
 Route::post('admin-login', [ 'as' => 'login', 'uses' => 'LoginController@postLogin'

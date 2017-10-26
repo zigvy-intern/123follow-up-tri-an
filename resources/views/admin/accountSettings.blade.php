@@ -2,70 +2,55 @@
 @section('content')
 <div class="account-settings-container">
   <div class="panel-group" id="accordion">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-          Account settings
-        </a>
-      </h4>
-    </div>
-    <div id="collapse1" class="panel-collapse collapse in">
-      <div class="panel-body">
-        <div class="account-container">
-          @include('admin.titles.title-list')
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+            Account Setting
+          </a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <ul class="nav nav-tabs" id="form-account" role="tablist">
+            <li class="nav-form">
+              <a class="nav-link" id="title-tab" data-toggle="tab" href="#title" role="tab" aria-controls="title" aria-selected="true">Title</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="group-tab" data-toggle="tab" href="#group" role="tab" aria-controls="group" aria-selected="false">Group</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="user" aria-selected="false">User</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="form-content">
+            <div class="tab-pane fade" id="title" role="tabpanel" aria-labelledby="title-tab">
+              @include('admin.titles.title-list')
+            </div>
+            <div class="tab-pane fade" id="group" role="tabpanel" aria-labelledby="group-tab">
+              @include('admin.groups.group-list')
+            </div>
+            <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
+              @include('admin.users.user-list')
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-          User profile
-        </a>
-      </h4>
-    </div>
-    <div id="collapse2" class="panel-collapse collapse">
-      <div class="panel-body">
-        <div class="user-profile-container">
-          this is user profile
-        </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+            User Profile
+          </a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+          @include('admin.users.user-profile')
       </div>
     </div>
   </div>
 </div>
-  <!-- <div id="accordion" role="tablist">
-    <div class="card">
-      <div class="card-header" role="tab" id="headingOne">
-        <h5 class="mb-0">
-          <a data-toggle="collapse" href="#collapseOne" aria-controls="collapseOne">
-            Account settings
-          </a>
-        </h5>
-      </div>
-
-      <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="account-container">
-          this is account settings
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header" role="tab" id="headingTwo">
-        <h5 class="mb-0">
-          <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-controls="collapseTwo">
-            User profile
-          </a>
-        </h5>
-      </div>
-      <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="user-profile-container">
-          this is user profile
-        </div>
-      </div>
-    </div>
-  </div> -->
 </div>
-
 @endsection
