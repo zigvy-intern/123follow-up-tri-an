@@ -7,6 +7,10 @@ API = {
     create: 'http://localhost:8000/api/group-create'
   },
   user: {
-    create: 'http://localhost:8000/api/user-create'
+    create: 'http://localhost:8000/api/user-create',
+    edit: 'http://localhost:8000/api/user-edit'
+  },
+  password: {
+    edit: 'http://localhost:8000/api/password-edit'
   }
 }

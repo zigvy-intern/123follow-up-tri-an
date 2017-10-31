@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use App\Title;
 use App\Group;
+use App\User;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,5 +23,7 @@ use App\Group;
 Route::post('title-create', 'TitleController@postCreateTitle');
 Route::post('title-edit', 'TitleController@postEditTitle');
 
+Route::post('user-create', 'UserController@postCreateUser');
+Route::post('user-edit', 'UserController@postEditUser');
+
 Route::post('group-create', 'GroupController@store');
-Route::post('user-create', 'UserController@store');
