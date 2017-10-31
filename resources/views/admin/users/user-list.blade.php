@@ -4,6 +4,7 @@
     <div class="btn-group">
       <select name="role" id="role" class="form-control">
          <option value="Admin">Admin</option>
+         <option value="Manager">Manager</option>
          <option value="User">User</option>
          <option value="All">All</option>
       </select>
@@ -37,17 +38,17 @@
       </thead>
       <tbody>
         @foreach($user as $u)
-          <tr>
+          <tr position="{{$u->role}}" id="tr-user-{{$u->id}}" data-user-id="{{$u->id}}" >
             <td>{{ $u-> id }}</td>
-            <td>{{ $u->name }}</td>
-            <td>{{ $u->birthday }}</td>
-            <td>{{ $u->email }} </td>
-            <td>{{ $u->phone }} </td>
-            <td>{{ $u->address}}</td>
-            <td>{{ $u->title}}</td>
-            <td>{{ $u->role }} </td>
-            <td>{{ $u->created_at }} </td>
-            <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
+            <td class="user-name">{{ $u->name }}</td>
+            <td class="user-birthday">{{ $u->birthday }}</td>
+            <td class="user-email">{{ $u->email }} </td>
+            <td class="user-phone">{{ $u->phone }} </td>
+            <td class="user-address">{{ $u->address}} </td>
+            <td class="user-title">{{ $u->title}} </td>
+            <td class="user-role">{{ $u->role }} </td>
+            <td >{{ $u->created_at }} </td>
+            <td><button class="btn btn-default" onclick="editUser(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
                 <button class="btn btn-default" id="delUser" type="button"><a href="{{route('deleteUser',$u->id)}}" class="glyphicon glyphicon-remove" ></a></button>
             </td>
             </td>

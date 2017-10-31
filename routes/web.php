@@ -67,5 +67,5 @@ Route::get('del-user/{id}', [ 'as' => 'deleteUser', 'uses' => 'DeleteController@
 ]);
 Route::get('del-group/{id}', [ 'as' => 'deleteGroup', 'uses' => 'DeleteController@getDeleteGroup'
 ]);
-Route::get('profile-user', [ 'as'=> 'profileUser',  'uses'=>'AdminController@getProfileUser'
-]);
+// Route::get('profile-user', [ 'as'=> 'profileUser',  'uses'=>'AdminController@getProfileUser'
+// ]);
