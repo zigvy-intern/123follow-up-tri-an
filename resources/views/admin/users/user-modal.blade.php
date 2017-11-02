@@ -8,7 +8,9 @@
       <div class="modal-body">
         <div class="row">
           <form method="post" id="insert-user-form">
-            <input type="hidden" name="id">
+            <div class="form-group">
+              <input type="hidden" name="id">
+            </div>
             <div class="form-group">
               <label>Name</label>
               <input type="text" name="name" id="name" class="form-control" />
@@ -59,7 +61,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" onclick="submitUser()" name="add" id="add" value="Add" class="btn btn-success"> Add</button>
+        <button type="button" onclick="submitUser()" name="add" id="add" value="Add" class="btn btn-primary"> Add</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
 

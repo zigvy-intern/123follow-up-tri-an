@@ -6,24 +6,29 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <form method="post" id="insert-user-form">
-          <input type="hidden" name="id">
-          <div class="form-group">
-            <label>Current Password</label>
-            <input type="password" name="cur_password" id="cur_password" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label>New Password</label>
-            <input type="password" name="new_password" id="new_password" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label>Confirm Password</label>
-            <input type="password" name="con_password" id="con_password" class="form-control" />
-          </div>
-          <div class="modal-footer">
-            <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            <button href="#" class="btn btn-primary" onclick="#" id="password_modal_save">Save changes</button>
-          </div>
+          <form action="{{ route('updatePassword') }}" method="post" id="insert-password-form">
+            @if(session('msg'))
+            <div class="alert alert-info">  {{session('msg')}}</div>
+            @endif
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="form-group">
+              <input type="hidden" name="id">
+            </div>
+            <div class="form-group">
+              <label>Current Password</label>
+              <input type="password" name="curPassword" class="form-control" />
+              <span style="color:red">{{ $errors->first('old_password') }}</span>
+            </div>
+            <div class="form-group">
+              <label>New Password</label>
+              <input type="password" name="curPassword" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Confirm Password</label>
+              <input type="password" name="confPassword" class="form-control" />
+            </div>
+            <div align="right"> <input type="submit" value="Update Password" class="btn btn-primary"></div>
+          </form>
         </div>
       </div>
     </div>

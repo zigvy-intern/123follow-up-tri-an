@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" onclick="submitTitle()" name="insert" id="insert" value="Insert" class="btn btn-success"> Add</button>
+        <button type="button" onclick="submitTitle()" name="insert" id="insert" value="Insert" class="btn btn-primary"> Add</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
