@@ -14,7 +14,7 @@
             <tbody>
               <tr>
                 <td>ID :</td>
-                <td>{{Auth::user()->id}}</td>
+                <td id="tr-user-{{Auth::user()->id}}" data-user-id="{{Auth::user()->id}}">{{Auth::user()->id}}</td>
               </tr>
               <tr>
                 <td>Your name :</td>
@@ -43,6 +43,9 @@
               <tr>
                 <td>Role : </td>
                 <td>{{Auth::user()->role}}</td>
+              </tr>
+              <tr>
+                <td class="user-password" hidden>{{Auth::user()->password}} </td>
               </tr>
             </tbody>
           </table>

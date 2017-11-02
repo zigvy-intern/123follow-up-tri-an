@@ -35,13 +35,13 @@ const submitUser = function(){
       data[row.name] = row.value;
   });
   let url = '';
-  if(data.id.trim() === "" )
+  if(!data.id)
     url = API.user.create;
   else
     url = API.user.edit;
 
   $.post(url, data, function(response){
-    if(data.id.trim() === "" )
+    if(!data.id)
       appendToUser(JSON.parse(response));
     else
       updateUserRecord(JSON.parse(response));
@@ -59,6 +59,7 @@ const appendToUser = function(user){
       <td>${ user.address}</td>
       <td>${ user.title}</td>
       <td>${ user.role } </td>
+      <td hidden>${ user.password } </td>
       <td>${ user.created_at } </td>
       <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
           <button class="btn btn-default" id="delUser" type="button"><a href="{{route('deleteUser',$u->id)}}" class="glyphicon glyphicon-remove" ></a></button>
@@ -99,6 +100,7 @@ const updateUserRecord = function(user){
   $(`#tr-user-${user.id}`).find('.user-title').text(user.title);
   $(`#tr-user-${user.id}`).find('.user-role').text(user.role);
 }
+
 
 
 $(document).ready(function(){

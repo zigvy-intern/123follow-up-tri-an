@@ -13,7 +13,7 @@
       <div id="collapse1" class="panel-collapse collapse in">
         <div class="panel-body">
           <ul class="nav nav-tabs" id="form-account" role="tablist">
-            <li class="nav-form">
+            <li class="nav-form active">
               <a class="nav-link" id="title-tab" data-toggle="tab" href="#title" role="tab" aria-controls="title" aria-selected="true">Title</a>
             </li>
             <li class="nav-item">
@@ -21,6 +21,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="user" aria-selected="false">User</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="role-tab" data-toggle="tab" href="#role-tab-content" role="tab" aria-controls="role" aria-selected="false">Role</a>
             </li>
           </ul>
           <div class="tab-content" id="form-content">
@@ -32,6 +35,9 @@
             </div>
             <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
               @include('admin.users.user-list')
+            </div>
+            <div class="tab-pane fade" id="role-tab-content" role="tabpanel" aria-labelledby="role-tab">
+              @include('admin.roles.role-list')
             </div>
           </div>
         </div>

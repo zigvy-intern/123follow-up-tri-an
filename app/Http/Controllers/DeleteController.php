@@ -14,7 +14,7 @@ class DeleteController extends Controller
         $title = Title::where('id', $id)->first();
         if ($title) {
             $title->delete();
-            return redirect()->route('title');
+            return redirect()->route('accountSetting');
         } else {
             return redirect()->back()->with('error', 'Failed');
         }
@@ -24,7 +24,7 @@ class DeleteController extends Controller
         $user = User::where('id', $id)->first();
         if (!($user['role']&& $user['role'] == 'Admin')) {
             $user->delete();
-            return redirect()->route('user');
+            return redirect()->route('accountSetting');
         } else {
             return redirect()->back()->with('error', 'No permission to delete this user!');
         }

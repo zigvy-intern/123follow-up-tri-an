@@ -34,87 +34,37 @@ body{background: #000;}
 	width: 100%;
 	height: 100%;
 	margin-top: 10px;
-
 }
-.header-top{
-	background: #fff;
-}
-.logo{
-	padding: 5px 0px 5px 20px;
-}
-.header-menu {
-	padding: 10px 10px;
-	text-align: center;
-	background: none;
-	border: none;
-	margin: 0px;
-}
-.header-menu li{
-	padding: 0px 0px;
-}
-.header-menu a{
-	padding: 5px;
-	color: #000;
-}
-.header-menu a:hover{
-	background: #1bbc9b;
-	text-decoration: none;
-	color: #fff;
-}
-/* End CSS for header-menu */
-
-/* Begin CSS for header-title */
-.header-title{
-	background: url(..source/img/background.jpg);
-	text-align: center;
-}
-.title{
-	padding: 80px 0px;
-}
-.title span{
-	font-size: 55px;
-	padding: 20px 0px;
-}
-.title p{
-	font-size: 18px;
-	padding: 20px 0px;
-}
-.button{
-	background: #A9A9A9;
-}
-/* End CSS for header-title */
 
 /* Begin CSS for corporation */
 #corporation{
 	background: #fff;
-	text-align: center;
 	border: 2px solid #fff;
-	border-radius: 0px 0px 5px 5px;
+	border-radius: 10px;
 }
-.corporation-title{
-	padding-bottom: 30px;
+#corporation i{
+	font-size: 30px;
+	display: block;
+	border: 1px solid;
+	border-radius: 40px;
+	padding: 16px;
+	height: 65px;
+	width: 65px;
+	margin: 20px 5px 0px 5px;
 }
-.corporation-title p{
-	font-size: 0px;
+#corporation i:hover{
+	background: #5993d9;
+	color: white;
+}
+#corporation span{
+	text-align: center;
+	margin-left: 10px;
 }
 .corporation-list-btn{
 	margin:0px 20px 0px 200px;
 	padding-bottom: 20px;
+}
 
-}
-.corporation-btn{
-	padding: 5px 0px;
-}
-.corporation-btn a{
-		color: #fff;
-	font-size: 16px;
-}
-.corporation-btn a:hover{
-	color: #000;
-}
-.corporation-icon{
-	padding: 15px 0px;
-}
 /* End CSS for corporation */
 
 /* Begin CSS for about us*/
@@ -189,9 +139,17 @@ body{background: #000;}
 .footer-left p{
 	line-height: 45px;
 }
-.footer-right a:hover{
-	color: #000;
+.footer-right{
+	font-size: 14px;
+	color: white;
+	text-align: right;
+	line-height: 45px;
+	margin-right: 20px;
 }
+.footer-right a{
+	color: white;
+}
+
 /* End CSS for footer */
 
 /* Begin CSS for responsive menu */
@@ -227,10 +185,13 @@ body{background: #000;}
 #title .row .Status .btn-group {
 	margin: 10px 0px 10px 0px;
 }
-#user .row .createuser .btn-group #role{
+#user .row .createuser .btn-group {
 	margin: 10px 0px 10px 0px;
 }
 #group .row-1 .Group .btn-group {
+	margin: 10px 0px 10px 0px;
+}
+#role-tab-content .row .createRole .btn-group {
 	margin: 10px 0px 10px 0px;
 }
 /* Begin CSS for accordion */

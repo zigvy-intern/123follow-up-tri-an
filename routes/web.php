@@ -49,6 +49,8 @@ Route::get('admin-user', [ 'as' => 'user', 'uses' => 'AdminController@getUser'
 ]);
 Route::get('admin-group', [ 'as' => 'group', 'uses' => 'AdminController@getGroup'
 ]);
+Route::get('admin-role', [ 'as' => 'role', 'uses' => 'AdminController@getRole'
+]);
 Route::get('admin-account', [ 'as' => 'accountSetting', 'uses' => 'AdminController@getAccountSetting'
 ]);
 Route::get('admin-login', [ 'as' => 'login', 'uses' => 'LoginController@getLogin'
@@ -57,15 +59,17 @@ Route::post('admin-login', [ 'as' => 'login', 'uses' => 'LoginController@postLog
 ]);
 Route::get('admin-logout', [ 'as' => 'logout', 'uses' => 'LoginController@getLogout'
 ]);
-Route::get('admin-register', [ 'as' => 'register', 'uses' => 'RegisterController@getRegister'
-]);
-Route::post('admin-register', [ 'as' => 'register', 'uses'=>'RegisterController@postRegister'
-]);
-Route::get('del-title/{id}', [ 'as' => 'deleteTitle', 'uses' => 'DeleteController@getDeleleTitle'
+// Route::get('admin-register', [ 'as' => 'register', 'uses' => 'RegisterController@getRegister'
+// ]);
+// Route::post('admin-register', [ 'as' => 'register', 'uses'=>'RegisterController@postRegister'
+// ]);
+Route::get('del-title/{id}', [ 'as' => 'deleteTitle', 'uses' => 'DeleteController@getDeleteTitle'
 ]);
 Route::get('del-user/{id}', [ 'as' => 'deleteUser', 'uses' => 'DeleteController@getDeleteUser'
 ]);
 Route::get('del-group/{id}', [ 'as' => 'deleteGroup', 'uses' => 'DeleteController@getDeleteGroup'
 ]);
-// Route::get('profile-user', [ 'as'=> 'profileUser',  'uses'=>'AdminController@getProfileUser'
-// ]);
+Route::get('change-password', ['as' => 'formPassword', 'uses' => 'PasswordController@getChangePassword'
+]);
+Route::post('change-password', ['as' => 'updatePassword', 'uses' => 'PasswordController@postChangePassword'
+]);
