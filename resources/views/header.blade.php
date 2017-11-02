@@ -10,7 +10,7 @@
 			<div class="col-xs-2">
 				<a href="#">
 					<i class="fa fa-user-circle" aria-hidden="true"></i>
-					<span> Agencys</span>
+					<span> Customers </span>
 				</a>
 			</div>
 			<div class="col-xs-2">
@@ -28,7 +28,7 @@
 			<div class="col-xs-2">
 				<a href="#">
 					<i class="fa fa-address-book" aria-hidden="true"></i>
-					<span> Contacts</span>
+					<span> Contacts </span>
 				</a>
 			</div>
 		</div>
