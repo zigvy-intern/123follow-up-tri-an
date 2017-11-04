@@ -26,4 +26,7 @@ Route::post('title-edit', 'TitleController@postEditTitle');
 Route::post('user-create', 'UserController@postCreateUser');
 Route::post('user-edit', 'UserController@postEditUser');
 
+Route::post('customer-create', 'CustomerController@postCreateCustomer');
+Route::post('customer-edit', 'CustomerController@postEditCustomer');
+
 Route::post('group-create', 'GroupController@store');

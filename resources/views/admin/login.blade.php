@@ -17,7 +17,7 @@
 
      	<form action="" method="POST" class="form-login" >
      		<input type="hidden" name="_token" value="{{csrf_token()}}">
-     		@include('admin.errors.error')
+     		@include('customer.errors.error')
         		<h2 class="form-login-heading">LOGIN</h2>
         			<input type="email" class="form-control" placeholder="Email" name="email">
        				<input type="password" class="form-control" placeholder="Password" name="password">

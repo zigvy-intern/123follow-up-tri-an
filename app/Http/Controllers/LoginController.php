@@ -15,7 +15,7 @@ class LoginController extends Controller
         if (!Auth::check()) {
             return view('admin.login');
         } else {
-            return redirect('admin');
+            return redirect('admin-account');
         }
     }
 
@@ -24,10 +24,10 @@ class LoginController extends Controller
         $login = [
             'email' => $request->email,
             'password' => $request->password,
-            'role' => 'Admin','Manager','User'
+            'role' => 'Admin'
         ];
         if (Auth::attempt($login)) {
-            return redirect('admin');
+            return redirect('admin-account');
         } else {
             return redirect()->back();
         }

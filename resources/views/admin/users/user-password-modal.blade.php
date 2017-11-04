@@ -12,16 +12,12 @@
             @endif
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">
-              <input type="hidden" name="id">
-            </div>
-            <div class="form-group">
               <label>Current Password</label>
               <input type="password" name="curPassword" class="form-control" />
-              <span style="color:red">{{ $errors->first('old_password') }}</span>
             </div>
             <div class="form-group">
               <label>New Password</label>
-              <input type="password" name="curPassword" class="form-control" />
+              <input type="password" name="newPassword" class="form-control" />
             </div>
             <div class="form-group">
               <label>Confirm Password</label>

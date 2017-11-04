@@ -29,11 +29,11 @@ class PasswordController extends Controller
         $curPassword = $request->curPassword;
         $newPassword = $request->newPassword;
 
-        if (!Hash::check($curPassword, Auth::user()->password)) {
-            return back()->with('msg', 'The specified password does not match the current password'); //when user enter wrong password as current password
-        } else {
+        if (Hash::check($curPassword, Auth::user()->password)) {
             $request->user()->fill(['password' => Hash::make($newPassword)])->save(); //updating password into user table
-            return back()->with('msg', 'Password has been updated');
+            return redirect()->back()->with('msg', 'Password has been updated');  //when user enter wrong password as current password
+        } else {
+            return redirect()->back()->with('msg', 'The specified password does not match the current password');
         }
         // echo 'here update query for password';
     }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Title;
 use App\Group;
 use App\User;
+use App\Customer;
 
 class DeleteController extends Controller
 {
@@ -29,13 +30,22 @@ class DeleteController extends Controller
             return redirect()->back()->with('error', 'No permission to delete this user!');
         }
     }
-
     public function getDeleteGroup($id)
     {
         $group = Group::where('id', $id)->first();
         if ($group) {
             $group->delete();
             return redirect()->route('group');
+        } else {
+            return redirect()->back()->with('error', 'Failed');
+        }
+    }
+    public function getDeleteCustomer($id)
+    {
+        $customer = Customer::where('id', $id)->first();
+        if ($customer) {
+            $customer->delete();
+            return redirect()->route('customer');
         } else {
             return redirect()->back()->with('error', 'Failed');
         }
