@@ -43,13 +43,13 @@ body{background: #000;}
 	border-radius: 10px;
 }
 #corporation i{
-	font-size: 30px;
+	font-size: 32px;
 	display: block;
 	border: 1px solid;
 	border-radius: 40px;
 	padding: 16px;
 	height: 65px;
-	width: 65px;
+	width: 64px;
 	margin: 20px 5px 0px 5px;
 }
 #corporation i:hover{
@@ -63,7 +63,6 @@ body{background: #000;}
 	margin:0px 20px 0px 200px;
 	padding-bottom: 20px;
 }
-
 /* End CSS for corporation */
 
 /* Begin CSS for about us*/
@@ -148,10 +147,8 @@ body{background: #000;}
 .footer-right a{
 	color: white;
 }
-
 /* End CSS for footer */
 
-/* Begin CSS for responsive menu */
 .collapse-li{
 	border: none;
 }
@@ -162,7 +159,6 @@ body{background: #000;}
 	.navbar-header button{margin:10px 0px;}
 }
 
-/* Begin CSS for tab Title */
 #accordion {
 	margin: 0px 130px 0px 130px;
 }
@@ -193,6 +189,9 @@ body{background: #000;}
 #role-tab-content .row .createRole .btn-group {
 	margin: 10px 0px 10px 0px;
 }
+/*#edit-customer-button span{
+	margin-bottom: 10px
+}*/
 /* Begin CSS for accordion */
 button.accordion:after {
   content: '\f055';
@@ -209,5 +208,4 @@ button.accordion:hover, button.accordion.is-open {
   background-color: #A9A9A9;
   border: 2px solid #A9A9A9;
 }
-
 /* End CSS for accordion */

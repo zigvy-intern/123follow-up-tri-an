@@ -51,6 +51,8 @@ Route::get('admin-group', [ 'as' => 'group', 'uses' => 'AdminController@getGroup
 ]);
 Route::get('admin-role', [ 'as' => 'role', 'uses' => 'AdminController@getRole'
 ]);
+Route::get('customer', [ 'as' => 'customer', 'uses' => 'AdminController@getCustomer'
+]);
 Route::get('admin-account', [ 'as' => 'accountSetting', 'uses' => 'AdminController@getAccountSetting'
 ]);
 Route::get('admin-login', [ 'as' => 'login', 'uses' => 'LoginController@getLogin'
@@ -59,15 +61,13 @@ Route::post('admin-login', [ 'as' => 'login', 'uses' => 'LoginController@postLog
 ]);
 Route::get('admin-logout', [ 'as' => 'logout', 'uses' => 'LoginController@getLogout'
 ]);
-// Route::get('admin-register', [ 'as' => 'register', 'uses' => 'RegisterController@getRegister'
-// ]);
-// Route::post('admin-register', [ 'as' => 'register', 'uses'=>'RegisterController@postRegister'
-// ]);
 Route::get('del-title/{id}', [ 'as' => 'deleteTitle', 'uses' => 'DeleteController@getDeleteTitle'
 ]);
 Route::get('del-user/{id}', [ 'as' => 'deleteUser', 'uses' => 'DeleteController@getDeleteUser'
 ]);
 Route::get('del-group/{id}', [ 'as' => 'deleteGroup', 'uses' => 'DeleteController@getDeleteGroup'
+]);
+Route::get('del-customer/{id}', [ 'as' => 'deleteCustomer', 'uses' => 'DeleteController@getDeleteCustomer'
 ]);
 Route::get('change-password', ['as' => 'formPassword', 'uses' => 'PasswordController@getChangePassword'
 ]);

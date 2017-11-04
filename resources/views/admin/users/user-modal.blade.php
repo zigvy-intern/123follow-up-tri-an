@@ -64,7 +64,6 @@
         <button type="button" onclick="submitUser()" name="add" id="add" value="Add" class="btn btn-primary"> Add</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
-
     </div>
   </div>
 </div>

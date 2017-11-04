@@ -9,6 +9,7 @@ use App\User;
 use App\Group;
 use App\Title;
 use App\Role;
+use App\Customer;
 use Hash;
 
 class AdminController extends Controller
@@ -52,5 +53,10 @@ class AdminController extends Controller
         $role_profile = Role::all();
         $profile = User::all();
         return view('admin.profile', compact('profile', 'role_profile', 'title_profile'));
+    }
+    public function getCustomer()
+    {
+        $customer = Customer::all();
+        return view('customer.customer-list', compact('customer'));
     }
 }

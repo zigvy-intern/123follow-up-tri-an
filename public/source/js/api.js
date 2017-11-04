@@ -3,14 +3,15 @@ API = {
     create: 'http://localhost:8000/api/title-create',
     edit: 'http://localhost:8000/api/title-edit',
   },
-   group: {
+  group: {
     create: 'http://localhost:8000/api/group-create'
   },
   user: {
     create: 'http://localhost:8000/api/user-create',
     edit: 'http://localhost:8000/api/user-edit'
   },
-  password: {
-    edit: 'http://localhost:8000/api/password-edit'
+  customer: {
+    create: 'http://localhost:8000/api/customer-create',
+    edit: 'http://localhost:8000/api/customer-edit'
   }
 }

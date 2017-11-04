@@ -8,7 +8,7 @@
 				</a>
 			</div>
 			<div class="col-xs-2">
-				<a href="#">
+				<a href="{{route('customer')}}">
 					<i class="fa fa-user-circle" aria-hidden="true"></i>
 					<span> Customers </span>
 				</a>
