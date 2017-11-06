@@ -28,7 +28,7 @@
           <th>Name</th>
           <th>Day of Birth</th>
           <th>Email</th>
-          <th>Phone</th>
+          <th>Phone Number</th>
           <th>Address</th>
           <th>Title</th>
           <th>Role</th>

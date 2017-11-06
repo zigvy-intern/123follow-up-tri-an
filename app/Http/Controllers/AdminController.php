@@ -32,7 +32,8 @@ class AdminController extends Controller
     {
         $role = Role::all();
         $user = User::all();
-        return view('admin.users.user-list', compact('user', 'role'));
+        $title = Title::all();
+        return view('admin.users.user-list', compact('user', 'role', 'title'));
     }
     public function getRole()
     {

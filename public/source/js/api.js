@@ -4,7 +4,8 @@ API = {
     edit: 'http://localhost:8000/api/title-edit',
   },
   group: {
-    create: 'http://localhost:8000/api/group-create'
+    create: 'http://localhost:8000/api/group-create',
+    edit: 'http://localhost:8000/api/group-edit',
   },
   user: {
     create: 'http://localhost:8000/api/user-create',

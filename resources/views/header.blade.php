@@ -14,7 +14,7 @@
 				</a>
 			</div>
 			<div class="col-xs-2">
-				<a href="#">
+				<a href="{{route('tourLayout')}}">
 					<i class="fa fa-globe" aria-hidden="true"></i>
 					<span> Booking Tour</span>
 				</a>
