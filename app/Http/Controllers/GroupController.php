@@ -14,8 +14,6 @@ class GroupController extends Controller
         $group->leader_name = $req->leader;
         $group->members = $req->members;
         $group->job_name = $req->job;
-        $group->create_day = $req->createday;
-        $group->deadline = $req->deadline;
         $group->save();
         $group_id = $group->id;
 

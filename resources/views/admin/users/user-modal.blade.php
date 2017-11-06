@@ -39,9 +39,9 @@
               <div class="col-xs-6">
                 <label>Role</label>
                 <select name="role" id="role" class="form-control">
-                  <option value="Admin">Admin</option>
-                  <option value="Manager">Manager</option>
-                  <option value="User">User</option>
+                  @foreach($role as $ro)
+                  <option value="{{$ro->name}}">{{$ro->name}}</option>
+                  @endforeach
                </select>
              </div>
             </div>
@@ -49,11 +49,9 @@
               <div class="col-xs-6">
                 <label>Title</label>
                 <select name="title" id="title" class="form-control">
-                  <option value="CFO">CFO</option>
-                  <option value="CEO">CEO</option>
-                  <option value="SEO">SEO</option>
-                  <option value="Senior">Senior</option>
-                  <option value="Junior">Junior</option>
+                  @foreach($title as $tit)
+                  <option value="{{$tit->title_name}}">{{$tit->title_name}}</option>
+                  @endforeach
                </select>
              </div>
             </div>

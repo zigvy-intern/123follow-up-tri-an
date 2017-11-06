@@ -209,3 +209,51 @@ button.accordion:hover, button.accordion.is-open {
   border: 2px solid #A9A9A9;
 }
 /* End CSS for accordion */
+
+/* Begin CSS for tour-layout*/
+p {font-size: 16px;}
+.margin {margin-bottom: 45px;}
+.bg-1 {
+		background-color: #1abc9c; /* Green */
+		color: #ffffff;
+		margin-top: 10px;
+		border-radius: 10px 10px 0px 0px;
+		height: 400px;
+}
+.bg-3 {
+		background-color: #ffffff; /* White */
+		color: #555555;
+		border-radius: 10px;
+		margin-top: 10px;
+}
+.bg-3 img{
+	border-radius: 5px;
+	 height: 200px;
+}
+.bg-3 button{
+	margin: 5px 0px 50px 0px;
+}
+.container-fluid {
+		padding-top: 70px;
+		padding-bottom: 70px;
+}
+.navbar {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		border: 0;
+		border-radius: 0;
+		margin-bottom: 0;
+		font-size: 12px;
+		letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+		color: #1abc9c !important;
+}
+#myCarousel .carousel-inner{
+	margin: 10px 0px 10px 0px;
+	border-radius: 10px;
+}
+#myCarousel .carousel-indicators{
+
+}
+/* End CSS for tour-layout */

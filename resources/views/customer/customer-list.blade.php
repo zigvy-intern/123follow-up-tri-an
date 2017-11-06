@@ -35,8 +35,8 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Address</th>
-                    <th>Phone</th>
-                    <th>Created_at</th>
+                    <th>Phone Number</th>
+                    <th>Created at</th>
                     <th>Action</th>
                   </tr>
                 </thead>
