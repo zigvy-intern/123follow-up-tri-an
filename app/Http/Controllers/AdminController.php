@@ -26,6 +26,17 @@ class AdminController extends Controller
     public function getGroup()
     {
         $group = Group::all();
+        $group_data = [];
+        foreach ($group as $key => $value) {
+            $group_view = $value->getViewData();
+            $group_view['users'] = [];
+            $arrayMember = explode(',', $value->members);
+            foreach ($arrayMember as $index => $row) {
+                $member = User::find($row);
+                array_push($group_view['users'], ['user_id' => $member->id, 'name' => $member->name]);
+            }
+            array_push($group_data, $group_view);
+        }
         return view('admin.groups.group-list', compact('group'));
     }
     public function getUser()
@@ -48,17 +59,7 @@ class AdminController extends Controller
         $group = Group::all();
         $user = User::all();
 
-        $group_data = [];
-        foreach ($group as $key => $value) {
-            $group_view = $value->getViewData();
-            $group_view['users'] = [];
-            $arrayMember = explode(',', $value->members);
-            foreach ($arrayMember as $index => $row) {
-                $member = User::find($row);
-                array_push($group_view['users'], ['user_id' => $member->id, 'name' => $member->name]);
-            }
-            array_push($group_data, $group_view);
-        }
+        
         return view('admin.accountSettings', compact('title', 'group', 'user', 'role'));
     }
     public function getProfileUser()
