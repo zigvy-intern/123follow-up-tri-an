@@ -20,7 +20,7 @@
 				</a>
 			</div>
 			<div class="col-xs-2">
-				<a href="#">
+				<a href="{{route('hotelLayout')}}">
 					<i class="fa fa-bed" aria-hidden="true"></i>
 					<span> Booking Hotel</span>
 				</a>

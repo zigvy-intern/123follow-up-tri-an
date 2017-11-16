@@ -77,3 +77,7 @@ Route::get('tour-layout', ['as' => 'tourLayout', 'uses' => 'TourController@getTo
 ]);
 Route::get('tour-detail/{id}', ['as' => 'tourDetail', 'uses' => 'TourController@getTourDetail'
 ]);
+Route::get('book-hotel', ['as' => 'hotelLayout', 'uses' => 'BookHotelController@getHotel'
+]);
+Route::get('detail-hotel/{id}', ['as' => 'hotelDetail', 'uses' => 'BookHotelController@getHotelDetail'
+]);
