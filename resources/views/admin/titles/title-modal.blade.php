@@ -1,4 +1,4 @@
-<div id="myTitle" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myTitleLabel" aria-hidden="true">
+<div id="myTitle" class="modal fade"  tabindex="-1" role="dialog"  aria-hidden="true">
   <div class="modal-dialog" >
     <div class="modal-content">
       <div class="modal-header">
@@ -10,11 +10,11 @@
           <form method="post" id="insert-form">
             <input type="hidden" name="id">
             <div class="form-group">
-              <label>Title Name</label>
+              <h3>Title Name</h3>
               <input type="text" name="title_name" id="title-name" class="form-control" />
             </div>
             <div class="form-group">
-              <label>Status</label>
+              <h3>Status</h3>
               <select name="status" id="title-status" class="form-control">
                 <option disabled selected value="none">Select status</option>
                 <option value="Active">Active</option>

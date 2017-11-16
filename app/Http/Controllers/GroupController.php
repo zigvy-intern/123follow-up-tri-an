@@ -19,4 +19,11 @@ class GroupController extends Controller
 
         echo json_encode(Group::find($group_id));
     }
+    public function postEditGroup(Request $req)
+    {
+        $group = Group::findOrFail($req->id);
+        $input = $req->all();
+        $group->fill($input)->save();
+        echo json_encode(Group::find($req->id));
+    }
 }

@@ -12,32 +12,32 @@
               <input type="hidden" name="id">
             </div>
             <div class="form-group">
-              <label>Name</label>
+              <h3>Name</h3>
               <input type="text" name="name" id="name" class="form-control" />
             </div>
             <div class="form-group">
-              <label>Day of Birth</label>
+              <h3>Day of Birth</h3>
               <input type="date" name="birthday" id="birthday" class="form-control" />
             </div>
             <div class="form-group">
-              <label>Email</label>
+              <h3>Email</h3>
               <input type="email" name="email" id="email" class="form-control" />
             </div>
             <div class="form-group">
-              <label>Number Phone</label>
+              <h3>Number Phone</h3>
               <input type="text" name="phone" id="phone" class="form-control" />
             </div>
             <div class="form-group">
-              <label>Address</label>
+              <h3>Address</h3>
               <input type="text" name="address" id="address" class="form-control" />
             </div>
             <div class="form-group">
-              <label>Password</label>
+              <h3>Password</h3>
               <input type="password" name="password" id="password" class="form-control" />
             </div>
             <div class="form-group">
-              <div class="col-xs-6">
-                <label>Role</label>
+              <div class="col-xs-6" style="margin-left: -15px;">
+                <h3>Role</h3>
                 <select name="role" id="role" class="form-control">
                   @foreach($role as $ro)
                   <option value="{{$ro->name}}">{{$ro->name}}</option>
@@ -46,8 +46,8 @@
              </div>
             </div>
             <div class="form-group">
-              <div class="col-xs-6">
-                <label>Title</label>
+              <div class="col-xs-6" style="margin-left: 15px;">
+                <h3>Title</h3>
                 <select name="title" id="title" class="form-control">
                   @foreach($title as $tit)
                   <option value="{{$tit->title_name}}">{{$tit->title_name}}</option>

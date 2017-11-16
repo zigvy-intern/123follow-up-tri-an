@@ -111,7 +111,7 @@ $(document).ready(function(){
   }
   var row = $('table#user-list tr');
   addRemoveClass(row);
-  $('#role').on('change',function(){
+  $('#select-role').on('change',function(){
     var select = this.value;
     if(select !='All'){
       row.filter('[position='+select+']').show();

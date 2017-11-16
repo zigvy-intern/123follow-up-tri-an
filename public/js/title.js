@@ -9,7 +9,6 @@ $(function() {
   });
 });
 
-
 const submitTitle = function(){
   let data = {};
   $.each($('#insert-form').serializeArray(), function(index, row){

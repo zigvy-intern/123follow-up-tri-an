@@ -13,4 +13,13 @@ class Group extends Model
     {
         return $this->hasMany('App\User', 'id', 'id');
     }
+
+    public function getViewData()
+    {
+        return [
+        'id' => $this->id,
+        'group_name' => $this->group_name,
+        'members' => $this->members
+      ];
+    }
 }

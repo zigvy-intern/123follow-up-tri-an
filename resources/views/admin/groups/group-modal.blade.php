@@ -22,30 +22,27 @@
               <div class="row">
                 <div class="col-xs-6 .col-md-4">
                   <div class="panel panel-primary">
-                    <div class="panel-heading">List Users</div>
-                      <div class="panel-body">
-                        <div class="checkbox" name="users" value="Yes">
-                            @foreach($user as $u)
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" onChange="handleSelectUser(this)" data-user-id="{{$u->id}}" type="checkbox" value="">
-                                {{ $u->name }}
-                            </label>
-                          </div>
-                          @endforeach
+                    <div class="panel-heading">List Users
+                    </div>
+                    <div class="panel-body">
+                      <div class="checkbox" name="users" value="Yes">
+                        @foreach($user as $u)
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input class="form-check-input" onChange="handleSelectUser(this)" data-user-id="{{$u->id}}" type="checkbox" value="">
+                              {{ $u->name }}
+                          </label>
                         </div>
-
+                        @endforeach
                       </div>
+                    </div>
                   </div>
                 </div>
                 <div class="col-xs-6 .col-md-4">
                   <div class="panel panel-primary">
                     <div class="panel-heading">Users accept</div>
-
-                        <div class="list-group users-selected" name="members" id="members">
-
-                        </div>
-
+                      <div class="list-group users-selected" name="members" id="members">
+                      </div>
                   </div>
                 </div>
               </div>

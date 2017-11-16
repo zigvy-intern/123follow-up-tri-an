@@ -22,8 +22,7 @@
             <th>Tên Leader</th>
             <th>Thành viên</th>
             <th>Công việc</th>
-            <th>Sửa</th>
-            <th>Xóa</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -34,8 +33,7 @@
             <td class="group-leader">{{ $g-> leader_name }}</td>
             <td class="group-members" >{{ $g-> members }}</td>
             <td class="group-job">{{ $g-> job_name }}</td>
-            <td><button class="btn btn-default" onclick="editGroup(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button></td>
-            <td>
+            <td><button class="btn btn-default" onclick="editGroup(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
               <button class="btn btn-default" id="delGroup" type="button"><a href="{{route('deleteGroup',$g->id)}}" class="glyphicon glyphicon-remove" ></a></button>
             </td>
           </tr>

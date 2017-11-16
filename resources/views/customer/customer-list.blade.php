@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 <script src="js/customer.js"></script>
-<div class="account-settings-container">
+<div class="account-settings-container" style="min-height: calc(100vh - 76px - 65px);">
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
