@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-<div class="account-settings-container">
+<div class="account-settings-container" style="min-height: calc(100vh - 76px - 65px);">
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -13,8 +13,8 @@
       <div id="collapse1" class="panel-collapse collapse in">
         <div class="panel-body">
           <ul class="nav nav-tabs" id="form-account" role="tablist">
-            <li class="nav-form active">
-              <a class="nav-link" id="title-tab" data-toggle="tab" href="#title" role="tab" aria-controls="title" aria-selected="true">Title</a>
+            <li class="nav-item active">
+              <a class="nav-link" id="title-tab" data-toggle="tab" href="#title" role="tab" aria-controls="title" aria-selected="true" aria-expanded="true">Title</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="group-tab" data-toggle="tab" href="#group" role="tab" aria-controls="group" aria-selected="false">Group</a>

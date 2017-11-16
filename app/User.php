@@ -26,13 +26,4 @@ class User extends Authenticatable
     protected $hidden = ['password', 'remember_token',];
 
     public $timestamps = true;
-
-    public function Group()
-    {
-        return $this->belongsTo('App\Group', 'id', 'id');
-    }
-    public function Role()
-    {
-        return $this->belongsTo('App\Role', 'id', 'id');
-    }
 }

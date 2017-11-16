@@ -75,3 +75,5 @@ Route::post('change-password', ['as' => 'updatePassword', 'uses' => 'PasswordCon
 ]);
 Route::get('tour-layout', ['as' => 'tourLayout', 'uses' => 'TourController@getTour'
 ]);
+Route::get('tour-detail/{id}', ['as' => 'tourDetail', 'uses' => 'TourController@getTourDetail'
+]);

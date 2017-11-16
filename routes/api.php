@@ -31,3 +31,6 @@ Route::post('customer-edit', 'CustomerController@postEditCustomer');
 
 Route::post('group-create', 'GroupController@store');
 Route::post('group-edit', 'GroupController@postEditGroup');
+
+Route::post('tour-create', 'TourController@postCreateTour');
+Route::post('tour-edit', 'TourController@postEditTour');

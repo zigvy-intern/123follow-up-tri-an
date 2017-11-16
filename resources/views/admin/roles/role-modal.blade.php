@@ -10,11 +10,11 @@
           <form method="post" id="insert_form">
             <div class="row">
               <div class="col-xs-6 .col-md-4">
-                <label for="groupname">Group</label>
+                <h3 for="groupname">Group</h3>
                 <input type="text" class="form-control is-valid" id="groupname" name="groupname" placeholder="Group name" required>
               </div>
               <div class="col-xs-6 .col-md-4">
-                <label for="leader">Leader</label>
+                <h3 for="leader">Leader</h3>
                 <input type="text" class="form-control is-valid" id="leader" name="leader" placeholder="Leader name"  required>
               </div>
             </div>
@@ -37,18 +37,18 @@
             </div>
             <div class="row">
               <div class="col-xs-12 .col-sm-6 .col-md-8">
-                <label for="job">Job</label>
+                <h3 for="job">Job</h3>
                 <textarea class="form-control is-valid" rows="3" name="job" id="job" ></textarea>
                 <br/>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-6 .col-md-4">
-                <label for="createday">Create day</label>
+                <h3 for="createday">Create day</h3>
                 <input type="date" name="createday" id="createday" class="form-control" /><br />
               </div>
               <div class="col-xs-6 .col-md-4">
-                <label for="deadline">Deadline</label>
+                <h3 for="deadline">Deadline</h3>
                 <input type="date" name="deadline" id="deadline" class="form-control" /><br />
               </div>
             </div>

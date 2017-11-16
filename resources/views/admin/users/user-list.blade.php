@@ -1,7 +1,7 @@
 <script src="js/user.js"></script>
 <div class="row">
   <div class="createuser">
-    <div class="btn-group">
+    <div class="btn-group" onkeyup="onFilter(this)">
       <select name="select-role" id="select-role" class="form-control">
         <option value="Admin">Admin</option>
         <option value="Manager">Manager</option>
@@ -46,7 +46,7 @@
             <td class="user-phone">{{ $u->phone }} </td>
             <td class="user-address">{{ $u->address}} </td>
             <td class="user-title">{{ $u->title}} </td>
-            <td class="user-role">{{ $u->role }} </td>
+            <td class="user-role">{{ $u->role}} </td>
             <td class="user-password" hidden>{{ $u->password }} </td>
             <td >{{ $u->created_at }} </td>
             <td><button class="btn btn-default" onclick="editUser(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button>

@@ -8,7 +8,7 @@
         <option value="Inactive" id="inactive" name="inactive">Inactive</option>
       </select>
     </div>
-    <button class="btn btn-primary " data-toggle="modal" data-target="#myTitle" ><i class="glyphicon glyphicon-plus"></i></button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#myTitle" ><i class="glyphicon glyphicon-plus"></i></button>
             <!-- Modal -->
     @include('admin.titles.title-modal')
     <form action="" class="navbar-form navbar-right" method="post">

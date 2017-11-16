@@ -13,20 +13,14 @@ $(function() {
 
 const submitGroup = function(){
   let data = {};
-
   // get data form from create group
   $.each($('#insert_form').serializeArray(), function(index, row){
     if(row.value.trim() !== "")
     data[row.name] = row.value;
   });
-
   // get member of of
-
   let members = [];
-
-
   $('.users-selected #members').each(function(index, row){
-
    members.push($(row).data('user-id'));
   });
   data['members'] = members.join(',');
@@ -36,7 +30,6 @@ const submitGroup = function(){
     url = API.group.create;
   else
     url = API.group.edit;
-
   $.post(url, data, function(response){
     if(!data.id)
       appendToGroup(JSON.parse(response));
@@ -47,7 +40,6 @@ const submitGroup = function(){
 }
 
 const appendToGroup = function(group){
-
   let html = `<tr>
     <td>${group.id}</td>
     <td>${group.group_name }</td>
@@ -55,8 +47,7 @@ const appendToGroup = function(group){
     <td>${group.members }</td>
     <td>${group.job_name }</td>
     <td><button class="btn btn-default" onclick="editGroup(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button></td>
-    <td><button class="btn btn-default" id="delGroup" type="button"><a href="{{route('deleteGroup',$g->id)}}" class="glyphicon glyphicon-remove" ></a></button>
-    </td>
+    <td><button class="btn btn-default" id="delGroup" type="button"><a href="{{route('deleteGroup',$g->id)}}" class="glyphicon glyphicon-remove" ></a></button></td>
     </tr>`
   $('#group-list').append(html);
 }
@@ -81,7 +72,7 @@ const editGroup = function(el){
   const groupId = $(el).parents('tr').data('group-id');
   const groupName = $(el).parents('tr').find('.group-name').text().trim();
   const leaderName = $(el).parents('tr').find('.group-leader').text().trim();
-  const members = $(el).parents('tr').find('.group-members').text().trim();
+  const members = $(el).parents('tr').find('.group-members');
   const jobName = $(el).parents('tr').find('.group-job').text().trim();
     $('#modalgroup input[name=id]').val(groupId);
     $('#modalgroup #groupname').val(groupName);
@@ -95,29 +86,25 @@ const editGroup = function(el){
 const handleSelectUser = function(element){
   const userId = $(element).data('user-id');
   const userName = $(element).parent().text().trim();
-
   if (element.checked) {
     const html = `<a data-user-id=${userId} class="list-group-item" id="members">
       ${userName}
-
-    </a>`
+      </a>`
     $('#modalgroup .users-selected').append(html);
   } else {
-    $(#modalgroup a[data-user-id=${userId}]).remove()
+    $(`#modalgroup a[data-user-id=${userId}]`).remove()
   }
-
-
   var userSelected = [];
-$('a.list-group-item').each(function(){
-   userSelected.push($(this).data('user-id'));
+  $('a.list-group-item').each(function(){
+    userSelected.push($(this).data('user-id'));
 })
 
 }
 const updateGroupRecord = function(group){
-  $(#tr-group-${group.id}).find('.group-name').text(group.group_name);
-  $(#tr-group-${group.id}).find('.group-leader').text(group.leader_name);
-  $(#tr-group-${group.id}).find('.group-members').text(group.members);
-  $(#tr-group-${group.id}).find('.group-job').text(group.job_name);
+  $(`#tr-group-${group.id}`).find('.group-name').text(group.group_name);
+  $(`#tr-group-${group.id}`).find('.group-leader').text(group.leader_name);
+  $(`#tr-group-${group.id}`).find('.group-members').text(group.members);
+  $(`#tr-group-${group.id}`).find('.group-job').text(group.job_name);
 
 }
 
