@@ -12,23 +12,23 @@
               <input type="hidden" name="id">
             </div>
             <div class="form-group">
-              <label>Customer Name</label>
+              <h3>Customer Name</h3>
               <input class="form-control" name="cus_name" id="cus_name" placeholder="Your name" type="text">
             </div>
             <div class="form-group">
-              <label>Email</label>
+              <h3>Email</h3>
               <input class="form-control" name="cus_email" id="cus_email" placeholder="Your email" type="email">
             </div>
             <div class="form-group">
-              <label>Password </label>
+              <h3>Password </h3>
               <input class="form-control" name="cus_password" id="cus_password" placeholder="Your Password" type="password">
             </div>
             <div class="form-group">
-              <label>Address</label>
+              <h3>Address</h3>
               <input class="form-control" name="cus_address" id="cus_address" placeholder="Your Address" type="text">
             </div>
             <div class="form-group">
-              <label>Number Phone</label>
+              <h3>Number Phone</h3>
               <input class="form-control" name="cus_phone" id="cus_phone" placeholder="Your Number Phone" type="text">
             </div>
           </form>

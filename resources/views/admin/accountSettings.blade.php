@@ -14,7 +14,7 @@
         <div class="panel-body">
           <ul class="nav nav-tabs" id="form-account" role="tablist">
             <li class="nav-item active">
-              <a class="nav-link" id="title-tab" data-toggle="tab" href="#title" role="tab" aria-controls="title" aria-selected="true" aria-expanded="true">Title</a>
+              <a class="nav-link " id="title-tab" data-toggle="tab" href="#title" role="tab" aria-controls="title" aria-selected="true" aria-expanded="true">Title</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="group-tab" data-toggle="tab" href="#group" role="tab" aria-controls="group" aria-selected="false">Group</a>
@@ -54,9 +54,9 @@
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
           @include('admin.users.user-profile')
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 @endsection

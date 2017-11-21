@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body">
         <div class="form-group mx-sm-3">
-          <form method="post" id="insert_form">
+          <form method="post" id="insert-role-form">
             <div class="row">
               <div class="col-xs-6 .col-md-4">
                 <h3 for="groupname">Group</h3>

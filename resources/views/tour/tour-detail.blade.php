@@ -29,45 +29,45 @@
     </a>
   </div>
   <div class="description">
-    <h1>{{$tourDetail->tour_name_detail}}</h1>
-    <div class="panel-group" id="accordion-des">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a style="margin-right: 990px;" data-toggle="collapse" data-parent="#accordion-des" href="#collapse1">Tour Info</a>
-            <button type="button" data-toggle="modal" data-target="#modalTourInfo" class="btn btn-default">
-              <i class="glyphicon glyphicon-pencil"></i>
-            </button>
-            @include('tour.tour-info-modal')
-          </h4>
-        </div>
-        <div id="collapse1" class="panel-collapse collapse in">
-          <div class="panel-body">
-            <div class="info">
-              <div class="col-xs-12">
-                <div class="row" style="font-size: 15px;margin-bottom: 20px; margin-top: 20px;">
-                  <div class="col-md-4 col-sm-4 col-xs-5">Tour ID: </div>
-                  <div class="col-md-8 col-sm-8 col-xs-7">{{$getTour->id}}</div><br><br>
-                  <div class="col-md-4 col-sm-4 col-xs-5">Departure:</div>
-                  <div class="col-md-8 col-sm-8 col-xs-7">{{$getTour->tour_form}}</div><br><br>
-                  <div class="col-md-4 col-sm-4 col-xs-5">Destination: </div>
-                  <div class="col-md-8 col-sm-8 col-xs-7">{{$getTour->tour_to}}</div><br><br>
-                  <div class="col-md-4 col-sm-4 col-xs-5">Departure Time:</div>
-                  <div class="col-md-8 col-sm-8 col-xs-7">{{$getTour->tour_time}}</div><br><br>
-                  <div class="col-md-4 col-sm-4 col-xs-5">Number Members:</div>
-                  <div class="col-md-8 col-sm-8 col-xs-7">{{$getTour->tour_member}}</div><br><br>
-                </div>
-                <div class="row tour-info-right-frame">
-                  <div class="col-xs-12 hidden-xs">
-                    <div class="f-left" style="margin-bottom: 10px;width:100%">
-                      <div class="f-left olt1">
-                        <div style="font-size:18px; margin-bottom:5px;color:#fc7700;border-bottom: 1px solid #ccc;padding-bottom: 5px;margin-top: 3px">
-                          <span itemprop="price">Price : ${{$getTour->tour_price}}</span>
-                        </div>
+    <h1 style="font-size: 30px;color: #20206C;"><b>{{$tourDetail->tour_name_detail}}</b></h1>
+  </div>
+  <div class="panel-group" id="accordion-des">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a style="margin-right: 1030px;" data-toggle="collapse" data-parent="#accordion-des" href="#collapse1">Tour Info</a>
+          <button type="button" data-toggle="modal" data-target="#modalTourInfo" class="btn btn-default">
+            <i class="glyphicon glyphicon-pencil"></i>
+          </button>
+          @include('tour.tour-info-modal')
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <div class="info">
+            <div class="col-xs-12">
+              <div class="row" style="font-size: 15px;margin-bottom: 20px; margin-top: 20px;">
+                <div class="col-md-4 col-sm-4 col-xs-5"><b>Tour ID: </b></div>
+                <div class="col-md-8 col-sm-8 col-xs-7">{{$getTour->id}}</div><br><br>
+                <div class="col-md-4 col-sm-4 col-xs-5"><b>Departure:</b></div>
+                <div class="col-md-8 col-sm-8 col-xs-7">{{$getTour->tour_from}}</div><br><br>
+                <div class="col-md-4 col-sm-4 col-xs-5"><b>Destination: </b></div>
+                <div class="col-md-8 col-sm-8 col-xs-7">{{$getTour->tour_to}}</div><br><br>
+                <div class="col-md-4 col-sm-4 col-xs-5"><b>Departure Time:</b></div>
+                <div class="col-md-8 col-sm-8 col-xs-7">{{$getTour->tour_time}}</div><br><br>
+                <div class="col-md-4 col-sm-4 col-xs-5"><b>Number Members:</b></div>
+                <div class="col-md-8 col-sm-8 col-xs-7">{{$getTour->tour_member}}</div><br><br>
+              </div>
+              <div class="row tour-info-right-frame">
+                <div class="col-xs-12 hidden-xs">
+                  <div class="f-left" style="margin-bottom: 10px;width:100%">
+                    <div class="f-left olt1">
+                      <div style="font-size:18px; margin-bottom:5px;color:#fc7700;border-bottom: 1px solid #ccc;padding-bottom: 5px;margin-top: 3px">
+                        <span itemprop="price"><b>Price :</b> ${{number_format($getTour->tour_price)}}</span>
                       </div>
-                      <div class="f-left olt1">
-                        <a href="#" type="submit" value="Booking" class="btn btn-warning" style="font-size: 20px;">Available</a>
-                      </div>
+                    </div>
+                    <div class="f-left olt1">
+                      <a href="#" type="submit" value="Booking" class="btn btn-warning" style="font-size: 20px;">Available</a>
                     </div>
                   </div>
                 </div>
@@ -76,20 +76,20 @@
           </div>
         </div>
       </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a style="margin-right: 960px;" data-toggle="collapse" data-parent="#accordion-des" href="#collapse2">Tour Journey</a>
-            <button type="button" data-toggle="modal" data-target="#modalTourJourney" class="btn btn-default">
-              <i class="glyphicon glyphicon-pencil"></i>
-            </button>
-            @include('tour.tour-journey-modal')
-          </h4>
-        </div>
-        <div id="collapse2" class="panel-collapse collapse">
-          <div class="panel-body" style="font-size: 15px;">
-            {{$tourDetail->tour_description_detail}}
-          </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a style="margin-right: 1000px;" data-toggle="collapse" data-parent="#accordion-des" href="#collapse2">Tour Journey</a>
+          <button type="button" data-toggle="modal" data-target="#modalTourJourney" class="btn btn-default">
+            <i class="glyphicon glyphicon-pencil"></i>
+          </button>
+          @include('tour.tour-journey-modal')
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body" style="font-size: 15px;">
+          {{$tourDetail->tour_description_detail}}
         </div>
       </div>
     </div>

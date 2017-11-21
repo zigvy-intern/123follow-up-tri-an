@@ -4,7 +4,7 @@
       <div class="modal-header">
           <h4 class="modal-tour-info" id="tour-info-modal-text">Edit Tour Infomation</h4>
       </div>
-      <div class="modal-body" >
+      <div class="modal-body" id="insert-tour-info-form" >
         <div class="row" style="text-align:left;">
           <div class="form-group col-md-6">
             <h3>Tour ID</h3>
@@ -16,11 +16,21 @@
           </div>
           <div class="form-group col-md-6">
             <h3>From</h3>
-            <input type="text" class="form-control" id="add_tour_from">
+            <select name="loai" class="form-control" id="add_tour_form">
+                <option>Choose..</option>
+              @foreach($getCountry as $coun)
+                <option value="{{$coun->id}}">{{$coun->country_name}}</option>
+              @endforeach
+            </select>
           </div>
           <div class="form-group col-md-6">
             <h3>To</h3>
-            <input type="text" class="form-control" id="add_tour_to">
+            <select name="loai" class="form-control" id="add_tour_form">
+              <option>Choose..</option>
+              @foreach($getCountry as $coun)
+                <option value="{{$coun->id}}">{{$coun->country_name}}</option>
+              @endforeach
+            </select>
           </div>
           <div class="form-group col-md-6";>
             <h3>Departure Time</h3>
