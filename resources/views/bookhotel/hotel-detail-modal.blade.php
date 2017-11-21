@@ -39,6 +39,24 @@
                             </div>
                           </div>
                         </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for="type_room">Type Room</label>
+                            <div class="form-group">
+                              <select name="type" id="type_room" class="form-control">
+                                <option disabled selected value="none">Select room</option>
+                                <option value="single">Single room</option>
+                                <option value="double">Double room</option>
+                             </select>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="price_room">Price:</label>
+                            <div class="form-group">
+                              <input type="text" class="form-control is-valid" id="price_room" name="price_room" placeholder="Price" required>
+                            </div>
+                          </div>
+                        </div>
                       </form>
                   </div>
               </div>

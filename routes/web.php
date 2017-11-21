@@ -73,9 +73,25 @@ Route::get('change-password', ['as' => 'formPassword', 'uses' => 'PasswordContro
 ]);
 Route::post('change-password', ['as' => 'updatePassword', 'uses' => 'PasswordController@postChangePassword'
 ]);
-Route::get('tour-layout', ['as' => 'tourLayout', 'uses' => 'TourController@getTour'
+Route::get('tour-layout', ['as' => 'tourLayout', 'uses' => 'TourController@getAddTour'
+]);
+Route::post('tour-layout', ['as' => 'tourLayout', 'uses' => 'TourController@postAddTour'
 ]);
 Route::get('tour-detail/{id}', ['as' => 'tourDetail', 'uses' => 'TourController@getTourDetail'
+]);
+Route::get('edit-tour/{id}', ['as' => 'editTour', 'uses' => 'TourController@getEditTour'
+]);
+Route::post('edit-tour/{id}', ['as' => 'editTour', 'uses' => 'TourController@postEditTour'
+]);
+Route::get('delete-tour/{id}', ['as' => 'deleteTour', 'uses' => 'TourController@getDeleteTour'
+]);
+// Route::get('edit-tour-detail/{id}', ['as' => 'editTourDetail', 'uses' => 'TourController@getEditTourDetail'
+// ]);
+// Route::get('delete-tour-detail/{id}', ['as' => 'deleteTourDetail', 'uses' => 'TourController@getDeleteTourDetail'
+// ]);
+// Route::post('update-tour-detail/{id}', ['as' => 'updateTourDetail', 'uses' => 'TourController@postUpdateTourDetail'
+// ]);
+Route::get('booking-tour', ['as' => 'bookingTour', 'uses' => 'TourController@getBookingTour'
 ]);
 Route::get('book-hotel', ['as' => 'hotelLayout', 'uses' => 'BookHotelController@getHotel'
 ]);
