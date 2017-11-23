@@ -69,6 +69,8 @@ Route::get('del-group/{id}', [ 'as' => 'deleteGroup', 'uses' => 'DeleteControlle
 ]);
 Route::get('del-customer/{id}', [ 'as' => 'deleteCustomer', 'uses' => 'DeleteController@getDeleteCustomer'
 ]);
+Route::get('del-book-tour/{id}', [ 'as' => 'deleteBookTour', 'uses' => 'DeleteController@getDeleteBookTour'
+]);
 Route::get('change-password', ['as' => 'formPassword', 'uses' => 'PasswordController@getChangePassword'
 ]);
 Route::post('change-password', ['as' => 'updatePassword', 'uses' => 'PasswordController@postChangePassword'
@@ -91,8 +93,6 @@ Route::get('delete-tour/{id}', ['as' => 'deleteTour', 'uses' => 'TourController@
 // ]);
 // Route::post('update-tour-detail/{id}', ['as' => 'updateTourDetail', 'uses' => 'TourController@postUpdateTourDetail'
 // ]);
-Route::get('booking-tour', ['as' => 'bookingTour', 'uses' => 'TourController@getBookingTour'
-]);
 Route::get('book-hotel', ['as' => 'hotelLayout', 'uses' => 'BookHotelController@getHotel'
 ]);
 Route::get('detail-hotel/{id}', ['as' => 'hotelDetail', 'uses' => 'BookHotelController@getHotelDetail'

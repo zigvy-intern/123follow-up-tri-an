@@ -20,7 +20,7 @@
       </div>
     </form>
   </div>
-  <div class="table">
+  <div class="table" style="font-size: 15px;">
     <table id='title-list' class="table table-bordered table-hover">
       <thead>
         <tr>
@@ -39,7 +39,7 @@
             <td class='title-status'>{{ $t->status }} </td>
             <td>{{ $t->created_at }} </td>
             <td><button class="btn btn-default" onclick="editTitle(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
-                <button class="btn btn-default" id="delete" type="button"><a class="glyphicon glyphicon-remove" href="{{route('deleteTitle',$t->id)}}"></a></button>
+                <button class="btn btn-default" id="delete" type="button"><a class="glyphicon glyphicon-remove" href="{{route('deleteTitle',$t->id)}}" style="color:#404040;"></a></button>
             </td>
           </tr>
         @endforeach

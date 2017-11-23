@@ -7,6 +7,7 @@ use App\Tour;
 use App\TourDetail;
 use App\Country;
 use App\BookingTour;
+use App\Customer;
 
 class TourController extends Controller
 {
@@ -14,7 +15,9 @@ class TourController extends Controller
     {
         $tour = Tour::paginate(6);
         $country = Country::all();
-        return view('tour.tour-layout', compact('tour', 'country'));
+        $bookingTour = BookingTour::all();
+        $customer = Customer::all();
+        return view('tour.tour-layout', compact('tour', 'country', 'bookingTour', 'customer'));
     }
     public function getTourDetail(Request $req)
     {
@@ -50,7 +53,7 @@ class TourController extends Controller
                 $addTour->tour_image = $final_name;
                 $addTour->save();
 
-                return redirect()->route('tourLayout');
+                return redirect()->route('tourLayout')->with(['flash_message' => ' <strong> Success!</strong> Complete Add Tour']);
             } else {
                 return redirect()->back()->with('err_file', 'File too big');
             }
@@ -98,10 +101,28 @@ class TourController extends Controller
         $delTour->delete();
         return redirect()->back();
     }
-    public function getBookingTour()
+    public function postCreateBookTour(Request $req)
     {
-        $bookingTour = BookingTour::all();
-        $tour = Tour::all();
-        return view('tour.booking.booking-tour', compact('bookingTour', 'tour'));
+        $bookTour = new BookingTour();
+        $bookTour->book_tour_id = $req->book_choose_tour;
+        $bookTour->book_cus_name = $req->book_cus_name;
+        $bookTour->book_email = $req->book_tour_email;
+        $bookTour->book_phone = $req->book_tour_phone;
+        $bookTour->book_member = $req->book_tour_member;
+        $bookTour->book_address = $req->book_tour_address;
+        $bookTour->book_time = $req->book_tour_time;
+        $bookTour->book_price = $req->book_tour_price;
+        $bookTour->book_total_price = $req->book_tour_totalPrice;
+
+        $bookTour->save();
+        $bookTour_id = $bookTour->id;
+        echo json_encode(BookingTour::find($bookTour_id));
+    }
+    public function postEditBookTour(Request $req)
+    {
+        $bookTour = BookingTour::findOrFail($req->id);
+        $input = $req->all();
+        $bookTour->fill($input)->save();
+        echo json_encode(BookingTour::find($req->id));
     }
 }

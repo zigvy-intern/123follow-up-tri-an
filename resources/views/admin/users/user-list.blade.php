@@ -20,7 +20,7 @@
       </div>
     </form>
   </div>
-  <div class="table">
+  <div class="table" style="font-size: 15px;">
     <table id='user-list' class="table table-bordered table-hover">
       <thead>
         <tr>
@@ -50,7 +50,7 @@
             <td class="user-password" hidden>{{ $u->password }} </td>
             <td >{{ $u->created_at }} </td>
             <td><button class="btn btn-default" onclick="editUser(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
-                <button class="btn btn-default" id="delUser" type="button"><a href="{{route('deleteUser',$u->id)}}" class="glyphicon glyphicon-remove" ></a></button>
+                <button class="btn btn-default" id="delUser" type="button"><a href="{{route('deleteUser',$u->id)}}" class="glyphicon glyphicon-remove" style="color:#404040;"></a></button>
             </td>
             @if(Session::has('error'))
               <div class="alert alert-error">{{Session::get('error')}}</div>

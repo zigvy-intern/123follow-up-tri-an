@@ -20,7 +20,7 @@
       </div>
     </form>
   </div>
-  <div class="table">
+  <div class="table" style="font-size: 15px;">
     <table id='role-list' class="table table-bordered table-hover" >
       <thead>
         <tr>
@@ -35,7 +35,7 @@
           <td>{{ $r-> id }}</td>
           <td>{{ $r-> name}}</td>
           <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
-              <button class="btn btn-default" id="delRole" type="button"><a href="#" class="glyphicon glyphicon-remove" ></a></button>
+              <button class="btn btn-default" id="delRole" type="button"><a href="#" class="glyphicon glyphicon-remove" style="color:#404040;" ></a></button>
           </td>
         </tr>
         @endforeach

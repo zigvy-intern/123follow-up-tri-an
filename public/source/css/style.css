@@ -64,8 +64,6 @@ body{background: #E0E0E0;}
 }
 /* End CSS for corporation */
 
-
-
 /* Begin CSS for footer */
 .footer{
 	background: #00003D;
@@ -107,19 +105,13 @@ body{background: #E0E0E0;}
 .account-settings-container #accordion{
 	margin-top: 10px;
 }
-#addTours {
+#tours {
 	margin: 0px 130px 0px 130px;
 }
-.tour-container #addTours{
+.tour-container #tours{
 	margin-top: 10px;
 }
-#bookingTours {
-	margin: 0px 130px 0px 130px;
-}
-.booking-container #bookingTours {
-	margin-top: 10px;
-}
-.booking-container #bookingTours h3{
+#insert-book-tour-form h3{
 	margin-bottom: 10px;
 }
 #bookingHotels {
