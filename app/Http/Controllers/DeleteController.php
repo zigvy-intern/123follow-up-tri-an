@@ -50,4 +50,14 @@ class DeleteController extends Controller
             return redirect()->back()->with('error', 'Failed');
         }
     }
+    public function getDeleteBookTour($id)
+    {
+        $bookTour = BookingTour::where('id', $id)->first();
+        if ($bookTour) {
+            $bookTour->delete();
+            return redirect()->route('tourLayout');
+        } else {
+            return redirect()->back()->with('error', 'Failed');
+        }
+    }
 }

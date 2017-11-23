@@ -24,6 +24,10 @@
               <input class="form-control" name="cus_password" id="cus_password" placeholder="Your Password" type="password">
             </div>
             <div class="form-group">
+              <h3>Birthday </h3>
+              <input class="form-control" name="cus_birthday" id="cus_birthday" placeholder="Your Birthday" type="date">
+            </div>
+            <div class="form-group">
               <h3>Address</h3>
               <input class="form-control" name="cus_address" id="cus_address" placeholder="Your Address" type="text">
             </div>

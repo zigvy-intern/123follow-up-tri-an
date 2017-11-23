@@ -15,6 +15,7 @@
 	<script src="/source/js/bootstrap.js"></script>
 	<script src="/source/js/api.js"></script>
 	<script src="https://use.fontawesome.com/931fc10468.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 	<script src="/source/js/ckeditor/ckeditor.js"></script>
 	<script src="/source/js/ckfinder/ckfinder.js"></script>
 </head>

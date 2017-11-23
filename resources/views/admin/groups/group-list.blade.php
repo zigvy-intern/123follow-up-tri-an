@@ -13,7 +13,7 @@
         </span>
       </div>
     </form>
-    <div class="table">
+    <div class="table" style="font-size: 15px;">
       <table id='group-list' class="table table-bordered" >
         <thead>
           <tr>
@@ -34,7 +34,7 @@
             <td class="group-members" >{{ $g-> members }}</td>
             <td class="group-job">{{ $g-> job_name }}</td>
             <td><button class="btn btn-default" onclick="editGroup(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
-              <button class="btn btn-default" id="delGroup" type="button"><a href="{{route('deleteGroup',$g->id)}}" class="glyphicon glyphicon-remove" ></a></button>
+              <button class="btn btn-default" id="delGroup" type="button"><a href="{{route('deleteGroup',$g->id)}}" class="glyphicon glyphicon-remove" style="color:#404040;"></a></button>
             </td>
           </tr>
           @endforeach
