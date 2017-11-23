@@ -1,4 +1,5 @@
-<div id="modalTour" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="modalAddTour" aria-hidden="true">
+@foreach($tour as $t)
+<div id="modalTour{{$t->id}}" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="modalAddTour" aria-hidden="true">
   <div class="modal-dialog" >
     <div class="modal-content">
       <div class="modal-header">
@@ -86,3 +87,4 @@
     </div>
   </div>
 </div>
+@endforeach

@@ -34,12 +34,12 @@
   <div class="panel-group" id="accordion-des">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h4 class="panel-title">
-          <a style="margin-right: 1030px;" data-toggle="collapse" data-parent="#accordion-des" href="#collapse1">Tour Info</a>
+        <h4 class="panel-title" style="margin: -5px;">
+          <a style="margin-right: 1040px;" data-toggle="collapse" data-parent="#accordion-des" href="#collapse1">Tour Info</a>
           <button type="button" data-toggle="modal" data-target="#modalTourInfo" class="btn btn-default">
             <i class="glyphicon glyphicon-pencil"></i>
           </button>
-          @include('tour.tour-info-modal')
+          @include('tour.tourdetail.tour-info-modal')
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
@@ -79,12 +79,12 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h4 class="panel-title">
-          <a style="margin-right: 1000px;" data-toggle="collapse" data-parent="#accordion-des" href="#collapse2">Tour Journey</a>
+        <h4 class="panel-title" style="margin: -5px;">
+          <a style="margin-right: 1010px;" data-toggle="collapse" data-parent="#accordion-des" href="#collapse2">Tour Journey</a>
           <button type="button" data-toggle="modal" data-target="#modalTourJourney" class="btn btn-default">
             <i class="glyphicon glyphicon-pencil"></i>
           </button>
-          @include('tour.tour-journey-modal')
+          @include('tour.tourdetail.tour-journey-modal')
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">

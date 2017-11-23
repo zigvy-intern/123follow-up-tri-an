@@ -1,5 +1,5 @@
 $(function() {
-  $('#modalBookTour').on('hidden.bs.modal', function (e) {
+  $('#modalBookTour').on('hidden.bs.modal', function (ele) {
     $('#modalBookTour #book_choose_tour').val('');
     $('#modalBookTour #book_cus_name').val('');
     $('#modalBookTour #book_tour_email').val('');
@@ -53,7 +53,7 @@ const submitBookTour = function(){
 const appendToBookTour = function(bt){
   let html = `<tr position="#" id="tr-customer-{{$bt->id}}" data-customer-id="{{$bt->id}}" >
     <td>{{ $bt-> id }}</td>
-    <td class='book-tour-id'>${ bt.book_tour_id } </td>
+    <td class='book-tour-id'>${ bt.tour_name } </td>
     <td class='book-cus-id'>${ bt.book_cus_name } </td>
     <td class='book-email'>${ bt.book_email } </td>
     <td class='book-phone'>${ bt.book_phone } </td>
