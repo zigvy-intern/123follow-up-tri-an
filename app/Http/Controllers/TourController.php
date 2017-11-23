@@ -8,6 +8,7 @@ use App\TourDetail;
 use App\Country;
 use App\BookingTour;
 use App\Customer;
+use DB;
 
 class TourController extends Controller
 {
@@ -17,7 +18,11 @@ class TourController extends Controller
         $country = Country::all();
         $bookingTour = BookingTour::all();
         $customer = Customer::all();
-        return view('tour.tour-layout', compact('tour', 'country', 'bookingTour', 'customer'));
+        $join_table = DB::table('booking_tour')
+           ->join('tours', 'booking_tour.book_tour_id', '=', 'tours.id')
+           ->select('booking_tour.*', 'tours.tour_name')
+           ->get();
+        return view('tour.tour-layout', compact('tour', 'country', 'bookingTour', 'customer', 'join_table'));
     }
     public function getTourDetail(Request $req)
     {
@@ -27,7 +32,7 @@ class TourController extends Controller
         $tourData = $tourDetail->getTourViewData();
         $tourData['tour_image_detail'] = explode(',', $tourData['tour_image_detail']);
 
-        return view('tour.tour-detail', compact('tourDetail', 'getTour', 'getCountry'), $tourData);
+        return view('tour.tour_detail.tour-detail', compact('tourDetail', 'getTour', 'getCountry'), $tourData);
     }
     public function postAddTour(Request $req)
     {
@@ -65,7 +70,7 @@ class TourController extends Controller
     {
         $country = Country::all();
         $tour = Tour::where('id', $id)->first();
-        return view('tour.tour-layout', compact('country', 'tour'));
+        return view('tour.tour-layout.show', compact('country', 'tour'));
     }
     public function postEditTour($id, Request $req)
     {
@@ -93,7 +98,7 @@ class TourController extends Controller
         $addTour->tour_member = $req->add_tour_member;
         $addTour->tour_price = $req->add_tour_price;
         $editTour->save();
-        return redirect()->route('tourLayout');
+        return redirect()->route('tourLayout.show');
     }
     public function getDeleteTour($id)
     {

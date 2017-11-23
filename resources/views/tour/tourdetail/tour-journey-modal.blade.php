@@ -1,5 +1,5 @@
 <div id="modalTourJourney" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="modalTourLabel" aria-hidden="true">
-  <div class="modal-dialog" >
+  <div class="modal-dialog" style="width: 80%;">
     <div class="modal-content">
       <div class="modal-body">
         <textarea name="journey" id="journey" rows="10" cols="80">

@@ -7,6 +7,7 @@ use App\Title;
 use App\Group;
 use App\User;
 use App\Customer;
+use App\BookingTour;
 
 class DeleteController extends Controller
 {
