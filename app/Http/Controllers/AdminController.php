@@ -11,6 +11,7 @@ use App\Title;
 use App\Role;
 use App\Customer;
 use Hash;
+use DB;
 
 class AdminController extends Controller
 {
@@ -58,9 +59,12 @@ class AdminController extends Controller
         $title = Title::all();
         $group = Group::all();
         $user = User::all();
+        $joinTable = DB::table('users')
+           ->join('roles', 'users.role_id', '=', 'roles.id')
+           ->select('users.*', 'roles.role_name')
+           ->get();
 
-        
-        return view('admin.accountSettings', compact('title', 'group', 'user', 'role'));
+        return view('admin.accountSettings', compact('title', 'group', 'user', 'role', 'joinTable'));
     }
     public function getProfileUser()
     {

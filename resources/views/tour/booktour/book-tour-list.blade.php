@@ -1,17 +1,10 @@
 <div class="row">
   <div class="bookingTourForm" style="margin-top: -15px;">
-    <div class="btn-group" onkeyup="#">
-      <select name="select-tour" id="select-tour" class="form-control" style="margin-top: 8px;">
-        @foreach($tour as $tou)
-        <option value="{{$tou->id}}">{{$tou->tour_name}}</option>
-        @endforeach
-      </select>
-    </div>
     <button class="btn btn-primary " data-toggle="modal" data-target="#modalBookTour" style="margin-top: 8px;" ><i class="glyphicon glyphicon-plus"></i></button>
-    @include('tour.booktour.booking-tour-modal')
+    @include('tour.booktour.book-tour-modal')
     <form action="" class="navbar-form navbar-right" method="post">
       <div class="form-group input-group">
-        <input type="text" onkeyup="" class="form-control">
+        <input type="text" onkeyup="onBookTourSearch(this)" class="form-control">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
         </span>
@@ -29,14 +22,14 @@
           <th>Phone Number</th>
           <th>Address</th>
           <th>Members</th>
-          <th>Time</th>
+          <th>Day Order</th>
           <th>Total Price</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
         @foreach($join_table as $join)
-          <tr position="#" id="tr-bookTour-{{$join->id}}" data-bookTour-id="{{$join->id}}" >
+          <tr position="{{$join->tour_name}}" id="tr-bookTour-{{$join->id}}" data-bookTour-id="{{$join->id}}" >
             <td>{{ $join-> id }}</td>
             <td class='book-choose-id'>{{ $join->tour_name }}</td>
             <td class='book-cus-id'>{{ $join->book_cus_name }} </td>

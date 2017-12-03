@@ -47,24 +47,26 @@ const submitUser = function(){
       updateUserRecord(JSON.parse(response));
     $('#myUser').modal('hide');
   });
+  setTimeout(function(){
+    window.location.reload();
+  },500);
 }
 
-const appendToUser = function(user){
-  let html = `<tr>
-      <td>${ user.id }</td>
-      <td>${ user.name }</td>
-      <td>${ user.birthday }</td>
-      <td>${ user.email } </td>
-      <td>${ user.phone } </td>
-      <td>${ user.address}</td>
-      <td>${ user.title}</td>
-      <td>${ user.role } </td>
-      <td hidden>${ user.password } </td>
-      <td>${ user.created_at } </td>
-      <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
-          <button class="btn btn-default" id="delUser" type="button"><a href="{{route('deleteUser',$u->id)}}" class="glyphicon glyphicon-remove" ></a></button>
-      </td>
-    </tr>`;
+const appendToUser = function(jo){
+  let html = `<tr position="${jo.role_id}" id="tr-user-${jo.id}" data-user-id="${jo.id}" >
+    <td>{{ $jo-> id }}</td>
+    <td class="user-name">${ jo.name }</td>
+    <td class="user-birthday">${ jo.birthday }</td>
+    <td class="user-email">${ jo.email } </td>
+    <td class="user-phone">${ jo.phone } </td>
+    <td class="user-address">${ jo.address } </td>
+    <td class="user-title">${ jo.title } </td>
+    <td class="user-role">${ jo.role_name } </td>
+    <td class="user-password" hidden>${ jo.password } </td>
+    <td>${ jo.created_at } </td>
+    <td><button class="btn btn-default" onclick="editUser(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
+        <button class="btn btn-default" id="delUser" type="button"><a href="{{route('deleteUser',$jo->id)}}" class="glyphicon glyphicon-remove" style="color:#404040;"></a></button>
+    </td>`;
   $('#user-list').append(html);
 }
 

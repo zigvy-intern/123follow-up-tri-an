@@ -38,7 +38,7 @@
             </div>
             <div class="form-group col-md-6">
               <h3>Day Order</h3>
-              <input type="datetime-local" class="form-control" name="book_tour_time" id="book_tour_time">
+              <input type="date" class="form-control" name="book_tour_time" id="book_tour_time">
             </div>
             <div class="form-group col-md-3">
               <h3>Tour Price</h3>

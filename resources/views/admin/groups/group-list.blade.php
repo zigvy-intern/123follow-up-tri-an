@@ -1,7 +1,7 @@
 <script src="js/group.js"></script>
 <div class="row-1">
     <div class="Group">
-    <div class="btn-group" onkeyup="onFilter(this)">
+    <div class="btn-group" onkeyup="">
       <button class="btn btn-primary " data-toggle="modal" data-target="#modalgroup"><i class="glyphicon glyphicon-plus"></i></button>
     </div>
     @include('admin.groups.group-modal')

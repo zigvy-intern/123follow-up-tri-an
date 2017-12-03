@@ -75,16 +75,16 @@ Route::get('change-password', ['as' => 'formPassword', 'uses' => 'PasswordContro
 ]);
 Route::post('change-password', ['as' => 'updatePassword', 'uses' => 'PasswordController@postChangePassword'
 ]);
-Route::get('tour-layout', ['as' => 'tourLayout', 'uses' => 'TourController@getAddTour'
+Route::get('tour-layout', ['as' => 'tourLayout', 'uses' => 'TourController@getTour'
 ]);
-Route::post('tour-layout', ['as' => 'tourLayout', 'uses' => 'TourController@postAddTour'
-]);
+// Route::post('tour-layout', ['as' => 'tourLayout', 'uses' => 'TourController@postAddTour'
+// ]);
 Route::get('tour-detail/{id}', ['as' => 'tourDetail', 'uses' => 'TourController@getTourDetail'
 ]);
-Route::get('edit-tour/{id}', ['as' => 'editTour', 'uses' => 'TourController@getEditTour'
-]);
-Route::post('edit-tour/{id}', ['as' => 'editTour', 'uses' => 'TourController@postEditTour'
-]);
+// Route::get('edit-tour/{id}', ['as' => 'editTour', 'uses' => 'TourController@getEditTour'
+// ]);
+// Route::post('edit-tour/{id}', ['as' => 'editTour', 'uses' => 'TourController@postEditTour'
+// ]);
 Route::get('delete-tour/{id}', ['as' => 'deleteTour', 'uses' => 'TourController@getDeleteTour'
 ]);
 // Route::get('edit-tour-detail/{id}', ['as' => 'editTourDetail', 'uses' => 'TourController@getEditTourDetail'

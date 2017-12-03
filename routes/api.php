@@ -34,3 +34,6 @@ Route::post('group-edit', 'GroupController@postEditGroup');
 
 Route::post('booktour-create', 'TourController@postCreateBookTour');
 Route::post('booktour-edit', 'TourController@postEditBookTour');
+
+Route::post('addtour-create', 'TourController@postCreateAddTour');
+Route::post('addtour-edit', 'TourController@postEditAddTour');
