@@ -40,7 +40,7 @@
                 <h3>Role</h3>
                 <select name="role" id="role" class="form-control">
                   @foreach($role as $ro)
-                  <option value="{{$ro->name}}">{{$ro->name}}</option>
+                  <option value="{{$ro->id}}">{{$ro->role_name}}</option>
                   @endforeach
                </select>
              </div>

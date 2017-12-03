@@ -26,7 +26,9 @@ const submitTitle = function(){
       updateTitleRecord(JSON.parse(response));
     $('#myTitle').modal('hide');
   });
-
+  setTimeout(function(){
+    window.location.reload();
+  },500);
 }
 
 const appendToTitle = function(title){

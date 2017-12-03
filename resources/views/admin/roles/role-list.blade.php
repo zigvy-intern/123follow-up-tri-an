@@ -33,7 +33,7 @@
         @foreach($role as $r)
         <tr>
           <td>{{ $r-> id }}</td>
-          <td>{{ $r-> name}}</td>
+          <td>{{ $r-> role_name}}</td>
           <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
               <button class="btn btn-default" id="delRole" type="button"><a href="#" class="glyphicon glyphicon-remove" style="color:#404040;" ></a></button>
           </td>

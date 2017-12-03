@@ -1,51 +1,48 @@
-@foreach($tour as $t)
-<div id="modalTour{{$t->id}}" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="modalAddTour" aria-hidden="true">
+<div id="modalAddTour" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="modalAddTour" aria-hidden="true">
   <div class="modal-dialog" >
     <div class="modal-content">
       <div class="modal-header">
-          <h4 class="modal-tour" id="tour-modal-text">Add Tour</h4>
+          <h4 class="modal-tour" id="add-tour-modal-text">Add New Tour</h4>
       </div>
       <div class="modal-body" >
-        <form method="POST" enctype="multipart/form-data" action="{{route('tourLayout')}}">
-          {{csrf_field()}}
-          <div class="row" style="text-align:left;" id="insert-tour-form">
-            @if(Session::has('err_file'))
-              <div class="alert alert-danger">
-                {{Session::get('err_file')}}
-              </div>
-            @endif
+        <div class="row" style="text-align:left;" >
+          <form method="POST" id="insert-tour-form">
             <div class="form-group">
-              <input type="hidden" class="form-control" name="add_tour_id" >
+              <input type="hidden" class="form-control" name="add_tour_id" id="add_tour_id" >
             </div>
             <div class="form-group col-md-6">
               <h3>Tour Name</h3>
-              <input type="text" class="form-control" name="add_tour_name">
+              <input type="text" class="form-control" name="add_tour_name" id="add_tour_name">
             </div>
             <div class="form-group col-md-6">
               <h3>From</h3>
-              <select class="form-control" name="add_tour_from">
+              <select class="form-control" name="add_tour_from" id="add_tour_from">
                 <option>Choose..</option>
-                @foreach($country as $cou)
-                  <option value="{{$cou->id}}">{{$cou->country_name}}</option>
+                @foreach($city as $c)
+                  <option value="{{$c->name}}">{{$c->name}}</option>
                 @endforeach
               </select>
             </div>
             <div class="form-group col-md-6">
               <h3>To</h3>
-              <select class="form-control" name="add_tour_to">
+              <select class="form-control" name="add_tour_to" id="add_tour_to">
                 <option>Choose..</option>
-                @foreach($country as $cou)
-                  <option value="{{$cou->id}}">{{$cou->country_name}}</option>
+                @foreach($city as $c)
+                  <option value="{{$c->name}}">{{$c->name}}</option>
                 @endforeach
               </select>
             </div>
             <div class="form-group col-md-6">
-              <h3>Departure Time</h3>
-              <input type="datetime-local" class="form-control" name="add_tour_time">
+              <h3>Start Time</h3>
+              <input type="datetime-local" class="form-control" name="add_start_time" id="add_start_time">
+            </div>
+            <div class="form-group col-md-6">
+              <h3>End Time</h3>
+              <input type="datetime-local" class="form-control" name="add_end_time" id="add_end_time">
             </div>
             <div class="form-group col-md-6">
               <h3>Number Members</h3>
-              <select type="text" name="add_tour_member" class="form-control">
+              <select type="text" name="add_tour_member" id="add_tour_member" class="form-control">
                 <option selected>Choose...</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -71,20 +68,19 @@
             </div>
             <div class="form-group col-md-6">
               <h3>Price</h3>
-              <input type="text" class="form-control" name="add_tour_price" placeholder="$">
+              <input type="text" class="form-control" name="add_tour_price" id="add_tour_price" placeholder="$">
             </div>
             <div class="form-group col-md-6">
               <h3>Image</h3>
-              <input type="file" class="form-control" name="add_tour_image">
+              <input type="file" class="form-control" name="add_tour_image" id="add_tour_image">
             </div>
-            <div class="form-group col-md-12" style="text-align:right;">
-              <button name="addTour" class="btn btn-primary"> Add </button>
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" name="addTour" id="addTour" onclick="submitAddTour()" class="btn btn-primary"> Add </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-@endforeach

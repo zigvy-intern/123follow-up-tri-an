@@ -17,7 +17,7 @@ class UserController extends Controller
         $user->phone = $req->phone;
         $user->address = $req->address;
         $user->password = Hash::make($req->password);
-        $user->role = $req->role;
+        $user->role_id = $req->role;
         $user->title = $req->title;
         $user->save();
         $user_id = $user->id;

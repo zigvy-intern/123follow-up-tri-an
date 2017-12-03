@@ -18,8 +18,8 @@
             <h3>From</h3>
             <select name="loai" class="form-control" id="add_tour_form">
                 <option>Choose..</option>
-              @foreach($getCountry as $coun)
-                <option value="{{$coun->id}}">{{$coun->country_name}}</option>
+              @foreach($getCity as $ci)
+                <option value="{{$ci->name}}">{{$ci->name}}</option>
               @endforeach
             </select>
           </div>
@@ -27,8 +27,8 @@
             <h3>To</h3>
             <select name="loai" class="form-control" id="add_tour_form">
               <option>Choose..</option>
-              @foreach($getCountry as $coun)
-                <option value="{{$coun->id}}">{{$coun->country_name}}</option>
+              @foreach($getCity as $ci)
+                <option value="{{$ci->name}}">{{$ci->name}}</option>
               @endforeach
             </select>
           </div>

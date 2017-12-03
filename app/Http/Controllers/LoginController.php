@@ -24,7 +24,7 @@ class LoginController extends Controller
         $login = [
             'email' => $request->email,
             'password' => $request->password,
-            'role' => 'Admin'
+            'role_id' => ['1','2','3']
         ];
         if (Auth::attempt($login)) {
             return redirect('admin-account');

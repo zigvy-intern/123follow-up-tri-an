@@ -37,6 +37,9 @@ const submitGroup = function(){
       updateGroupRecord(JSON.parse(response));
     $('#modalgroup').modal('hide');
   });
+  setTimeout(function(){
+    window.location.reload();
+  },500);
 }
 
 const appendToGroup = function(group){

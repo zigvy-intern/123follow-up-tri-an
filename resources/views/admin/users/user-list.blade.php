@@ -3,10 +3,10 @@
   <div class="createuser">
     <div class="btn-group" onkeyup="onFilter(this)">
       <select name="select-role" id="select-role" class="form-control">
-        <option value="Admin">Admin</option>
-        <option value="Manager">Manager</option>
-        <option value="User">User</option>
         <option value="All">All</option>
+        @foreach($role as $r)
+        <option value="{{$r->id}}">{{$r->role_name}}</option>
+        @endforeach
       </select>
     </div>
     <button class="btn btn-primary " data-toggle="modal" data-target="#myUser" ><i class="glyphicon glyphicon-plus"></i></button>
@@ -37,20 +37,20 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($user as $u)
-          <tr position="{{$u->role}}" id="tr-user-{{$u->id}}" data-user-id="{{$u->id}}" >
-            <td>{{ $u-> id }}</td>
-            <td class="user-name">{{ $u->name }}</td>
-            <td class="user-birthday">{{ $u->birthday }}</td>
-            <td class="user-email">{{ $u->email }} </td>
-            <td class="user-phone">{{ $u->phone }} </td>
-            <td class="user-address">{{ $u->address}} </td>
-            <td class="user-title">{{ $u->title}} </td>
-            <td class="user-role">{{ $u->role}} </td>
-            <td class="user-password" hidden>{{ $u->password }} </td>
-            <td >{{ $u->created_at }} </td>
+        @foreach($joinTable as $jo)
+          <tr position="{{$jo->role_id}}" id="tr-user-{{$jo->id}}" data-user-id="{{$jo->id}}" >
+            <td>{{ $jo-> id }}</td>
+            <td class="user-name">{{ $jo->name }}</td>
+            <td class="user-birthday">{{ $jo->birthday }}</td>
+            <td class="user-email">{{ $jo->email }} </td>
+            <td class="user-phone">{{ $jo->phone }} </td>
+            <td class="user-address">{{ $jo->address}} </td>
+            <td class="user-title">{{ $jo->title}} </td>
+            <td class="user-role">{{ $jo->role_name}} </td>
+            <td class="user-password" hidden>{{ $jo->password }} </td>
+            <td >{{ $jo->created_at }} </td>
             <td><button class="btn btn-default" onclick="editUser(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
-                <button class="btn btn-default" id="delUser" type="button"><a href="{{route('deleteUser',$u->id)}}" class="glyphicon glyphicon-remove" style="color:#404040;"></a></button>
+                <button class="btn btn-default" id="delUser" type="button"><a href="{{route('deleteUser',$jo->id)}}" class="glyphicon glyphicon-remove" style="color:#404040;"></a></button>
             </td>
             @if(Session::has('error'))
               <div class="alert alert-error">{{Session::get('error')}}</div>

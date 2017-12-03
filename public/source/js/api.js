@@ -19,4 +19,8 @@ API = {
     create: 'http://localhost:8000/api/booktour-create',
     edit: 'http://localhost:8000/api/booktour-edit'
   },
+  addtour: {
+    create: 'http://localhost:8000/api/addtour-create',
+    edit: 'http://localhost:8000/api/addtour-edit'
+  },
 }

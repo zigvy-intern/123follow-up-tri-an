@@ -48,6 +48,9 @@ const submitCustomer = function(){
       updateCustomerRecord(JSON.parse(response));
     $('#modalCustomer').modal('hide');
   });
+  setTimeout(function(){
+    window.location.reload();
+  },500);
 }
 
 const appendToCustomer = function(customer){

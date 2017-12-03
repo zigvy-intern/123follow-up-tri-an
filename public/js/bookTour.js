@@ -47,21 +47,23 @@ const submitBookTour = function(){
       updateBookTourRecord(JSON.parse(response));
     $('#modalBookTour').modal('hide');
   });
-
+  setTimeout(function(){
+    window.location.reload();
+  },500);
 }
 
-const appendToBookTour = function(bt){
-  let html = `<tr position="#" id="tr-customer-{{$bt->id}}" data-customer-id="{{$bt->id}}" >
-    <td>{{ $bt-> id }}</td>
-    <td class='book-tour-id'>${ bt.tour_name } </td>
-    <td class='book-cus-id'>${ bt.book_cus_name } </td>
-    <td class='book-email'>${ bt.book_email } </td>
-    <td class='book-phone'>${ bt.book_phone } </td>
-    <td class='book-member'>${ bt.book_member } </td>
-    <td class='book-address'>${ bt.book_address } </td>
-    <td class='book-time'>${ bt.book_time } </td>
-    <td class='book-price'>${ bt.book_price} </td>
-    <td class='book-totalPrice'>${ bt.book_total_price } </td>
+const appendToBookTour = function(join){
+  let html = `<tr position="#" id="tr-bookTour-${join.id}" data-bookTour-id="${join.id}" >
+    <td>${join.id}</td>
+    <td class='book-choose-id'>${ join.tour_name } </td>
+    <td class='book-cus-id'>${ join.book_cus_name } </td>
+    <td class='book-email'>${ join.book_email } </td>
+    <td class='book-phone'>${ join.book_phone } </td>
+    <td class='book-member'>${ join.book_member } </td>
+    <td class='book-address'>${ join.book_address } </td>
+    <td class='book-time'>${ join.book_time } </td>
+    <td class='book-price'>${ join.book_price} </td>
+    <td class='book-totalPrice'>${ join.book_total_price } </td>
     <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
         <button class="btn btn-default" id="delTour" type="button"><a href="#" class="glyphicon glyphicon-remove" ></a></button>
     </td>
@@ -72,7 +74,7 @@ const appendToBookTour = function(bt){
 const editBookTour = function(ele) {
   $('#modalBookTour').modal('show');
   const bookTourId = $(ele).parents('tr').data('bookTour-id');
-  const bookTourName = $(ele).parents('tr').find('.book-tour-id').text().trim();
+  const bookTourName = $(ele).parents('tr').find('.book-choose-id').text().trim();
   const bookTourCus = $(ele).parents('tr').find('.book-cus-id').text().trim();
   const bookTourEmail = $(ele).parents('tr').find('.book-email').text().trim();
   const bookTourPhone = $(ele).parents('tr').find('.book-phone').text().trim();
@@ -107,40 +109,40 @@ const updateBookTourRecord = function(book){
   $(`#tr-bookTour-${book.id}`).find('.book-price').text(book.book_tour_price);
   $(`#tr-bookTour-${book.id}`).find('.book-totalPrice').text(book.book_tour_totalPrice);
 }
-//
-// const onHandleSearch = function(el){
-//   const textSearch = el.value;
-//   $('#title-list tbody tr').each(function(index, row){
-//     $(row).hide();
-//     let content = '';
-//     $(row).find('td').each(function(item, element){
-//       content += $(element).text().trim() + " ";
-//     })
-//     const patt = new RegExp(textSearch, 'ig');
-//     if(patt.test(content.trim())){
-//       $(row).show();
-//     }
-//   })
-// }
-//
-// $(document).ready(function(){
-//   function addRemoveClass(theRow){
-//     theRow.removeClass('odd even');
-//     theRow.filter(':odd').addClass('odd');
-//     theRow.filter(':even').addClass('even');
-//   }
-//   var row = $('table#title-list tr');
-//   addRemoveClass(row);
-//   $('#select-sta').on('change',function(){
-//     var select = this.value;
-//     if(select !='All'){
-//       row.filter('[position='+select+']').show();
-//       row.not('[position='+select+']').hide();
-//       var visibldeRow = row.filter('[position='+select+']');
-//       addRemoveClass(visibldeRow);
-//     }else{
-//       row.show();
-//       addRemoveClass(row);
-//     }
-//   });
-// });
+
+const onBookTourSearch = function(el){
+  const textSearch = el.value;
+  $('#bookTour-list tbody tr').each(function(index, row){
+    $(row).hide();
+    let content = '';
+    $(row).find('td').each(function(item, element){
+      content += $(element).text().trim() + " ";
+    })
+    const patt = new RegExp(textSearch, 'ig');
+    if(patt.test(content.trim())){
+      $(row).show();
+    }
+  })
+}
+
+$(document).ready(function(){
+  function addRemoveClass(theRow){
+    theRow.removeClass('odd even');
+    theRow.filter(':odd').addClass('odd');
+    theRow.filter(':even').addClass('even');
+  }
+  var row = $('table#bookTour-list tr');
+  addRemoveClass(row);
+  $('#select-tour').on('change',function(){
+    var select = this.value;
+    if(select !='All'){
+      row.filter('[position='+select+']').show();
+      row.not('[position='+select+']').hide();
+      var visibldeRow = row.filter('[position='+select+']');
+      addRemoveClass(visibldeRow);
+    }else{
+      row.show();
+      addRemoveClass(row);
+    }
+  });
+});
