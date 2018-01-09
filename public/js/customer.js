@@ -7,7 +7,7 @@ $(function() {
     $('#modalCustomer #cus_address').val('');
     $('#modalCustomer #cus_phone').val('');
     $('#customer-modal-text').text('Register');
-    $('#modalCustomer input[name=id_customer]').val('');
+    $('#modalCustomer input[name=id]').val('');
     $('#register').text('Register');
   });
 });
@@ -19,7 +19,6 @@ const onCustomerSearch = function(ele){
     let content = '';
     $(row).find('td').each(function(item, element){
       content += $(element).text().trim() + " ";
-      console.log(content);
     })
     const patt = new RegExp(textCusSearch, 'ig');
     if(patt.test(content.trim())){
@@ -34,23 +33,19 @@ const submitCustomer = function(){
     if(row.value.trim() !== "")
       data[row.name] = row.value;
   });
-  console.log(data);
   let url = '';
-  if(!data.id)
+  if(data.id.trim() === "")
     url = API.customer.create;
   else
     url = API.customer.edit;
 
   $.post(url, data, function(response){
-    if(!data.id)
+    if(data.id.trim() === "")
       appendToCustomer(JSON.parse(response));
     else
       updateCustomerRecord(JSON.parse(response));
-    $('#modalCustomer').modal('hide');
   });
-  setTimeout(function(){
-    window.location.reload();
-  },500);
+
 }
 
 const appendToCustomer = function(customer){
@@ -79,6 +74,7 @@ const editCustomer = function(ele) {
   const customerBirthday= $(ele).parents('tr').find('.customer-birthday').text().trim();
   const customerAddress = $(ele).parents('tr').find('.customer-address').text().trim();
   const customerPhone = $(ele).parents('tr').find('.customer-phone').text().trim();
+
   $('#modalCustomer input[name=id]').val(customerId);
   $('#modalCustomer #cus_name').val(customerName);
   $('#modalCustomer #cus_email').val(customerEmail);
@@ -98,4 +94,46 @@ const updateCustomerRecord = function(customer){
   $(`#tr-customer-${customer.id}`).find('.customer-address').text(customer.cus_address);
   $(`#tr-customer-${customer.id}`).find('.customer-phone').text(customer.cus_phone);
 
+}
+
+function validateCustomerForm(){
+  var cusFillName=document.getElementById('cus_name').value;
+  var cusFillBirthday=document.getElementById('cus_birthday').value;
+  var cusFillEmail=document.getElementById('cus_email').value;
+  var cusFillPhone=document.getElementById('cus_phone').value;
+  var cusFillAddress=document.getElementById('cus_address').value;
+  var cusFillPassword=document.getElementById('cus_password').value;
+
+
+  var atposition=cusFillEmail.indexOf("@");
+  var dotposition=cusFillEmail.lastIndexOf(".");
+  if (atposition<1 || dotposition<atposition+2 || dotposition+2>=cusFillEmail.length){
+  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);
+  return false;
+  }
+  if (cusFillName==null || cusFillName==""){
+    alert("Please fill out Customer Name");
+    return false;
+  };
+  if(cusFillBirthday==null || cusFillBirthday==""){
+    alert("Please fill out Customer Birthday");
+    return false;
+  };
+  if(cusFillEmail==null || cusFillEmail==""){
+    alert("Please fill out @gmail.com");
+    return false;
+  };
+  if(!/^[0-9]+$/.test(cusFillPhone)){
+    alert("Please only enter numeric for Number Phone! (Allowed input:0-9)")
+    return false;
+  };
+  if(cusFillAddress==null || cusFillAddress==""){
+    alert("Please fill out Customer Address");
+    return false;
+  };
+  if(cusFillPassword.length >6){
+    alert("Password must be at least 6 characters long");
+    return false;
+  };
+  submitCustomer()
 }

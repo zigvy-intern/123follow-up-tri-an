@@ -19,6 +19,7 @@ const submitTitle = function(){
     url = API.title.create;
   else
     url = API.title.edit;
+
   $.post(url, data, function(response){
     if(data.id.trim() === "" )
       appendToTitle(JSON.parse(response));
@@ -26,9 +27,14 @@ const submitTitle = function(){
       updateTitleRecord(JSON.parse(response));
     $('#myTitle').modal('hide');
   });
-  setTimeout(function(){
-    window.location.reload();
-  },500);
+}
+
+function validateform(){
+  var x = document.forms["myTitle"]["title_name"].value;
+      if (x == "") {
+          alert("Title Name must be filled out");
+          return false;
+      }
 }
 
 const appendToTitle = function(title){
@@ -37,8 +43,8 @@ const appendToTitle = function(title){
     <td>${title.title_name }</td>
     <td>${title.status } </td>
     <td>${title.created_at } </td>
-    <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
-        <button class="btn btn-default" id="delete" type="button"><i class="glyphicon glyphicon-remove"></i></button> </td>
+    <td><button class="btn btn-default" onclick="editTitle(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
+        <button class="btn btn-default" id="delete" type="button"><a class="glyphicon glyphicon-remove" href="{{route('deleteTitle',$t->id)}}" style="color:#404040;"></a></button> </td>
     </tr>`;
   $('#title-list').append(html);
 }
@@ -97,6 +103,18 @@ const updateTitleRecord = function(title){
   $(`#tr-title-${title.id}`).find('.title-status').text(title.status);
 }
 
-const TitleClass = function() {
 
+function validateTitleForm(){
+  var titleFillName=document.getElementById('title_name').value;
+  var titleFillStatus=document.getElementById('title_status').value;
+  console.log('asdad')
+  if (titleFillName==null || titleFillName==""){
+    alert("Please fill out Role Name");
+    return false;
+  };
+  if (titleFillStatus==null || titleFillStatus==""){
+    alert("Please choose Status");
+    return false;
+  };
+  submitTitle()
 }

@@ -14,6 +14,7 @@ class CustomerController extends Controller
         $customer->cus_name = $req->cus_name;
         $customer->cus_email = $req->cus_email;
         $customer->cus_password = Hash::make($req->cus_password);
+        $customer->cus_birthday = $req->cus_birthday;
         $customer->cus_address = $req->cus_address;
         $customer->cus_phone = $req->cus_phone;
         $customer->save();

@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Auth;
 use App\User;
-use App\Group;
 use App\Title;
 use App\Role;
 use App\Customer;
@@ -23,22 +22,6 @@ class AdminController extends Controller
     {
         $title = Title::all();
         return view('admin.titles.title-list', compact('title'));
-    }
-    public function getGroup()
-    {
-        $group = Group::all();
-        $group_data = [];
-        foreach ($group as $key => $value) {
-            $group_view = $value->getViewData();
-            $group_view['users'] = [];
-            $arrayMember = explode(',', $value->members);
-            foreach ($arrayMember as $index => $row) {
-                $member = User::find($row);
-                array_push($group_view['users'], ['user_id' => $member->id, 'name' => $member->name]);
-            }
-            array_push($group_data, $group_view);
-        }
-        return view('admin.groups.group-list', compact('group'));
     }
     public function getUser()
     {
@@ -57,21 +40,8 @@ class AdminController extends Controller
     {
         $role = Role::all();
         $title = Title::all();
-        $group = Group::all();
         $user = User::all();
-        $joinTable = DB::table('users')
-           ->join('roles', 'users.role_id', '=', 'roles.id')
-           ->select('users.*', 'roles.role_name')
-           ->get();
-
-        return view('admin.accountSettings', compact('title', 'group', 'user', 'role', 'joinTable'));
-    }
-    public function getProfileUser()
-    {
-        $title_profile = Title::all();
-        $role_profile = Role::all();
-        $profile = User::all();
-        return view('admin.profile', compact('profile', 'role_profile', 'title_profile'));
+        return view('admin.accountSettings', compact('title', 'group', 'user', 'role'));
     }
     public function getCustomer()
     {

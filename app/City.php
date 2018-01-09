@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class City extends Model
 {
-    protected $table ='devvn_tinhthanhpho';
-    protected $fillable =['matp','name','type'];
+    protected $table ='place_city';
+    protected $fillable =['matp','city_name','type'];
 }

@@ -47,7 +47,7 @@ body{background: #E0E0E0;}
 	padding: 12px;
 	height: 50px;
 	width: 50px;
-	margin: 5px 5px 0px 5px;
+	margin: 5px 5px 0px 0px;
 }
 #corporation i:hover{
 	background: black;
@@ -114,10 +114,10 @@ body{background: #E0E0E0;}
 #insert-book-tour-form h3{
 	margin-bottom: 10px;
 }
-#bookingHotels {
+#bookHotels {
 	margin: 0px 130px 0px 130px;
 }
-.hotel-container #bookingHotels{
+.hotel-container #bookHotels{
 	margin-top: 10px;
 }
 #user-list{
@@ -154,6 +154,12 @@ body{background: #E0E0E0;}
 	margin-bottom: 10px;
 }
 #insert-role-form h3{
+	margin-bottom: 10px;
+}
+#select #insert-hotel-form .form-group h3{
+	margin-bottom: 10px;
+}
+#insert-book-hotel-form h3{
 	margin-bottom: 10px;
 }
 /* Begin CSS for accordion */
@@ -197,7 +203,7 @@ p {font-size: 16px;}
 	font-size: 30px;
 }
 .bg-3 a{
-	margin: 5px 0px 10px 0px;
+	margin: 5px 0px 2px 0px;
 }
 .description h1{
 	text-align: center;
@@ -246,9 +252,6 @@ p {font-size: 16px;}
 }
 /* End CSS for pagination */
 
-#modalTourInfo .modal-body .row h3{
-	margin-bottom: 10px;
-}
 #addname{
 	margin: 0px 0px 0px 425px;
 }

@@ -20,7 +20,7 @@
       </div>
     </form>
   </div>
-  <div class="table" style="font-size: 15px;">
+  <div class="table" style="font-size: 14px;">
     <table id='user-list' class="table table-bordered table-hover">
       <thead>
         <tr>
@@ -37,20 +37,21 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($joinTable as $jo)
-          <tr position="{{$jo->role_id}}" id="tr-user-{{$jo->id}}" data-user-id="{{$jo->id}}" >
-            <td>{{ $jo-> id }}</td>
-            <td class="user-name">{{ $jo->name }}</td>
-            <td class="user-birthday">{{ $jo->birthday }}</td>
-            <td class="user-email">{{ $jo->email }} </td>
-            <td class="user-phone">{{ $jo->phone }} </td>
-            <td class="user-address">{{ $jo->address}} </td>
-            <td class="user-title">{{ $jo->title}} </td>
-            <td class="user-role">{{ $jo->role_name}} </td>
-            <td class="user-password" hidden>{{ $jo->password }} </td>
-            <td >{{ $jo->created_at }} </td>
+        @foreach($user as $u)
+          <tr position="{{$u->role_id}}" id="tr-user-{{$u->id}}" data-user-id="{{$u->id}}" >
+            <td>{{$u->id}}</td>
+            <td class="user-name">{{ $u->name }}</td>
+            <td class="user-birthday">{{ $u->birthday }}</td>
+            <td class="user-email">{{ $u->email }} </td>
+            <td class="user-phone">{{ $u->phone }} </td>
+            <td class="user-address">{{ $u->address}} </td>
+            <td class="user-title">{{ $u->title}} </td>
+            <td class="user-role" data-role-id="{{$u->role_id}}">{{$u->role_id}}</td>
+            <td class="user-password" hidden>{{ $u->password }} </td>
+            <td class="user-image" data-image="{{$u->image}}" hidden>{{ $u->image }} </td>
+            <td >{{ $u->created_at }} </td>
             <td><button class="btn btn-default" onclick="editUser(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
-                <button class="btn btn-default" id="delUser" type="button"><a href="{{route('deleteUser',$jo->id)}}" class="glyphicon glyphicon-remove" style="color:#404040;"></a></button>
+                <button class="btn btn-default" id="delUser" type="button"><a href="{{route('deleteUser',$u->id)}}" class="glyphicon glyphicon-remove" style="color:#404040;"></a></button>
             </td>
             @if(Session::has('error'))
               <div class="alert alert-error">{{Session::get('error')}}</div>

@@ -1,19 +1,11 @@
+<script src="js/role.js"></script>
 <div class="row">
   <div class="createRole">
-    <div class="btn-group">
-      <select name="select-role" id="select-role" class="form-control">
-        <option value="All" selected>All</option>
-        <option value="Admin" id="admin" name="admin">Admin</option>
-        <option value="Manager" id="manager" name="manager">Manager</option>
-        <option value="User" id="user" name="user">User</option>
-      </select>
-    </div>
-    <button class="btn btn-primary" data-toggle="modal" data-target="#addrole"><i class="glyphicon glyphicon-plus"></i></button>
-
+    <button class="btn btn-primary" data-toggle="modal" data-target="#modalRole" style="margin-top:7px;"><i class="glyphicon glyphicon-plus"></i></button>
     @include('admin.roles.role-modal')
     <form action="" class="navbar-form navbar-right" method="post">
       <div class="form-role input-role">
-        <input type="text" onkeyup="#" class="form-control">
+        <input type="text" onkeyup="onRoleSearch(this)" class="form-control">
         <span class="input-role-btn">
           <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
         </span>
@@ -31,11 +23,11 @@
       </thead>
       <tbody>
         @foreach($role as $r)
-        <tr>
-          <td>{{ $r-> id }}</td>
-          <td>{{ $r-> role_name}}</td>
-          <td><button class="btn btn-default" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
-              <button class="btn btn-default" id="delRole" type="button"><a href="#" class="glyphicon glyphicon-remove" style="color:#404040;" ></a></button>
+        <tr id="tr-role-{{$r->id}}" data-role-id="{{$r->id}}">
+          <td>{{$r->id}}</td>
+          <td class="role-name">{{$r->role_name}}</td>
+          <td><button class="btn btn-default" onclick="editRole(this)" type="button"><i class="glyphicon glyphicon-pencil"></i></button>
+              <button class="btn btn-default" id="delRole" type="button"><a href="{{route('deleteRole',$r->id)}}" class="glyphicon glyphicon-remove" style="color:#404040;"></a></button>
           </td>
         </tr>
         @endforeach
