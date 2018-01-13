@@ -62,3 +62,5 @@ Route::get('location-ward', 'HotelController@getLocationWard');
 Route::get('get-hotel', 'HotelController@getFilterHotel');
 Route::get('get-type-room', 'HotelController@getFilterTypeRoom');
 Route::get('get-hotel-room', 'HotelController@getHotelRoom');
+Route::get('get-hotel-name', 'StatisticController@getHotelName');
+Route::get('get-info-hotel/{get_hotel_id}', 'StatisticController@getInfoHotel');

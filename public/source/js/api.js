@@ -59,7 +59,9 @@ API = {
   get: {
     hotel: 'http://localhost:8000/api/get-hotel',
     typeRoom: 'http://localhost:8000/api/get-type-room',
-    hotelroom: 'http://localhost:8000/api/get-hotel-room'
+    hotelroom: 'http://localhost:8000/api/get-hotel-room',
+    infoHotel: 'http://localhost:8000/api/get-info-hotel',
+    hotelname: 'http://localhost:8000/api/get-hotel-name'
   }
 
 }

@@ -26,6 +26,6 @@
         	<button class="btn btn-block btn-success btn-rad btn-lg" data-dismiss="modal"> Login</button>
       	</form>
     </div> <!-- /container -->
-    <div class="text-center out-links"><a href="{{route('login')}}">&copy; 2017 Zigvy Corporation</a></div>
+    <div class="text-center out-links"><a href="{{route('login')}}">&copy; 2017</a></div>
 </body>
 </html>

@@ -51,6 +51,8 @@ Route::get('admin-role', [ 'as' => 'role', 'uses' => 'AdminController@getRole'
 ]);
 Route::get('customer', [ 'as' => 'customer', 'uses' => 'AdminController@getCustomer'
 ]);
+Route::get('statistic', [ 'as' => 'statistic', 'uses' => 'StatisticController@getStatistic'
+]);
 Route::get('admin-account', [ 'as' => 'accountSetting', 'uses' => 'AdminController@getAccountSetting'
 ]);
 Route::get('admin-login', [ 'as' => 'login', 'uses' => 'LoginController@getLogin'

@@ -105,6 +105,9 @@ body{background: #E0E0E0;}
 .account-settings-container #accordion{
 	margin-top: 10px;
 }
+.statistic-container #accordion{
+	margin-top: 10px;
+}
 #tours {
 	margin: 0px 130px 0px 130px;
 }
@@ -275,4 +278,7 @@ p {font-size: 16px;}
 }
 #name_hotel{
 	margin: 0px 150px 0px 140px;
+}
+#statistic .function-item li{
+	margin: 20px;
 }

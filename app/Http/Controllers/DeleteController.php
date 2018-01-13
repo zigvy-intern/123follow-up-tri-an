@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Title;
 use App\User;
 use App\Role;
+use App\Hotel;
+use App\HotelRoom;
 use App\Customer;
 use App\BookTour;
 use App\BookHotel;
@@ -55,7 +57,11 @@ class DeleteController extends Controller
     }
     public function getDeleteBookTour(Request $req)
     {
-        $bookTour = BookTour::where('id', $req->id)->first();
+        $bookTour = BookTour::findOrFail($req->id);
+        $getTour = Tour::findOrFail($bookTour->book_tour_id);
+        $getTour->booked_tour = $getTour->booked_tour-$bookTour->book_member;
+        $getTour->save();
+        echo json_encode($bookTour);
         if ($bookTour) {
             $bookTour->delete();
             return redirect()->route('tourLayout');
@@ -63,9 +69,12 @@ class DeleteController extends Controller
             return redirect()->back()->with('error', 'Failed');
         }
     }
-    public function getDeleteBookHotel($id)
+    public function getDeleteBookHotel(Request $req)
     {
-        $bookHotel = BookHotel::where('id', $id)->first();
+        $bookHotel= BookHotel::findOrFail($req->id);
+        $getHotelRoom = HotelRoom::findOrFail($bookHotel->hotel_type_room);
+        $getHotelRoom->room_booked = $getHotelRoom->room_booked-1;
+        $getHotelRoom->save();
         if ($bookHotel) {
             $bookHotel->delete();
             return redirect()->route('hotelLayout');
