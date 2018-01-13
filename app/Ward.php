@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ward extends Model
 {
-    protected $table ='devvn_xaphuongthitran';
-    protected $fillable =['xaid','name','type', 'maph'];
+    protected $table ='place_ward';
+    protected $fillable =['xaid','ward_name','type', 'maph'];
 }

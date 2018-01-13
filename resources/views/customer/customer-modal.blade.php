@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <form method="post" id="insert-customer-form" >
+          <form method="POST" enctype="multipart/form-data" id="insert-customer-form" >
             <div class="form-group">
               <input type="hidden" name="id">
             </div>
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" onclick="submitCustomer()" name="register" id="register" class="btn btn-primary"> Register </button>
+        <button type="button" onclick="validateCustomerForm()" name="register" id="register" class="btn btn-primary"> Register </button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

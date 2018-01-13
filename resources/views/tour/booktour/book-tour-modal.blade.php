@@ -2,25 +2,33 @@
   <div class="modal-dialog" >
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-user" id="book-tour-modal-text">Book New Tour</h4>
+        <h4 class="modal-user" id="book-tour-modal-text">Book New Tour</h4>
       </div>
       <div class="modal-body">
         <div class="row" style="text-align:left;">
-          <form method="POST" id="insert-book-tour-form">
+          <form method="POST" enctype="multipart/form-data" id="insert-book-tour-form">
             <div class="form-group">
               <input type="hidden" name="id">
             </div>
             <div class="form-group col-md-6">
-              <h3>Your Name</h3>
+              <h3>Customer Name</h3>
               <input type="text" class="form-control" name="book_cus_name" id="book_cus_name">
             </div>
             <div class="form-group col-md-6">
-              <h3>Choose your Tour</h3>
+              <h3>Tours</h3>
               <select class="form-control" name="book_choose_tour" id="book_choose_tour">
-                <option>Choose..</option>
+                <option selected disabled>Choose..</option>
                 @foreach($tour as $tou)
                   <option value="{{$tou->id}}" data-price="{{$tou->tour_price}}">{{$tou->tour_name}}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <h3>Manager</h3>
+              <select class="form-control" name="book_user_id" id="book_user_id">
+                <option selected disabled>Choose..</option>
+                @foreach($user as $u)
+                  <option value="{{$u->id}}">{{$u->name}}</option>
                 @endforeach
               </select>
             </div>
@@ -38,15 +46,20 @@
             </div>
             <div class="form-group col-md-6">
               <h3>Day Order</h3>
-              <input type="date" class="form-control" name="book_tour_time" id="book_tour_time">
+              <div class='input-group date' style="width: 100%;" >
+                <input type='text' class="form-control" name="book_tour_time" id='book_tour_time' style="border-radius:4px;"/>
+              </div>
             </div>
+            <script type="text/javascript">
+              $('#book_tour_time').datetimepicker();
+            </script>
             <div class="form-group col-md-3">
               <h3>Tour Price</h3>
-              <input type="text" class="form-control" name="book_tour_price" id="book_tour_price">
+              <input type="number" class="form-control" name="book_tour_price" id="book_tour_price">
             </div>
             <div class="form-group col-md-3">
               <h3>Members</h3>
-              <select type="text" name="book_tour_member" id="book_tour_member" class="form-control">
+              <select type="number" name="book_tour_member" id="book_tour_member" class="form-control">
                 <option value="1" data-number="1">1</option>
                 <option value="2" data-number="2">2</option>
                 <option value="3" data-number="3">3</option>
@@ -71,13 +84,13 @@
             </div>
             <div class="form-group col-md-6">
               <h3><b>Total Price</b></h3>
-              <b><input class="form-control" name="book_tour_totalPrice" id="book_tour_totalPrice"></input></b>
+              <b><input type="number" class="form-control" name="book_tour_totalPrice" id="book_tour_totalPrice"></input></b>
             </div>
           </form>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" onclick="submitBookTour()" name="bookTour" id="bookTour" class="btn btn-primary">Confirm</button>
+        <button type="button" onclick="validateform()" name="bookTour" id="bookTour" class="btn btn-primary">Confirm</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

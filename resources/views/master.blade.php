@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="/source/css/style.css">
 	<link rel="stylesheet" href="/source/css/reset.css">
 	<link rel="stylesheet" href="/source/css/profile.css">
+	<link rel="stylesheet" href="/source/css/jquery.datetimepicker.css">
 	<script src="/source/js/jquery-3.2.1.min.js"></script>
 	<script src="/source/js/bootstrap.js"></script>
 	<script src="/source/js/api.js"></script>
@@ -18,6 +19,8 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 	<script src="/source/js/ckeditor/ckeditor.js"></script>
 	<script src="/source/js/ckfinder/ckfinder.js"></script>
+	<script src="/source/js/jquery-datetimepicker/jquery.datetimepicker.full.js"></script>
+	<script src="/source/js/momentjs/moment.js"></script>
 </head>
 <body>
 	<div class="container container-max">

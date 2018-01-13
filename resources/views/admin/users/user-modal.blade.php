@@ -13,34 +13,39 @@
             </div>
             <div class="form-group">
               <h3>Name</h3>
-              <input type="text" name="name" id="name" class="form-control" />
+              <input type="text" name="name" id="name" class="form-control">
             </div>
             <div class="form-group">
               <h3>Day of Birth</h3>
-              <input type="date" name="birthday" id="birthday" class="form-control" />
+              <input type="date" name="birthday" id="birthday" class="form-control">
             </div>
             <div class="form-group">
               <h3>Email</h3>
-              <input type="email" name="email" id="email" class="form-control" />
+              <input type="email" name="email" id="email" class="form-control">
             </div>
             <div class="form-group">
               <h3>Number Phone</h3>
-              <input type="text" name="phone" id="phone" class="form-control" />
+              <input type="text" name="phone" id="phone" class="form-control">
             </div>
             <div class="form-group">
               <h3>Address</h3>
-              <input type="text" name="address" id="address" class="form-control" />
+              <input type="text" name="address" id="address" class="form-control">
             </div>
             <div class="form-group">
               <h3>Password</h3>
-              <input type="password" name="password" id="password" class="form-control" />
+              <input type="password" name="password" id="password" class="form-control">
+            </div>
+            <div class="form-group">
+              <h3>User Picture</h3>
+              <input type="file" name="image" id="image" class="form-control">
             </div>
             <div class="form-group">
               <div class="col-xs-6" style="margin-left: -15px;">
                 <h3>Role</h3>
                 <select name="role" id="role" class="form-control">
+                  <option selected disabled>Choose..</div>
                   @foreach($role as $ro)
-                  <option value="{{$ro->id}}">{{$ro->role_name}}</option>
+                  <option value="{{$ro->id}}" data-role-id="{{$ro->id}}">{{$ro->role_name}}</option>
                   @endforeach
                </select>
              </div>
@@ -49,6 +54,7 @@
               <div class="col-xs-6" style="margin-left: 15px;">
                 <h3>Title</h3>
                 <select name="title" id="title" class="form-control">
+                  <option selected disabled>Choose..</div>
                   @foreach($title as $tit)
                   <option value="{{$tit->title_name}}">{{$tit->title_name}}</option>
                   @endforeach
@@ -59,7 +65,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" onclick="submitUser()" name="add" id="add" value="Add" class="btn btn-primary"> Add</button>
+        <button type="button" onclick="validateUserForm()" name="addUser" id="addUser" class="btn btn-primary"> Add</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

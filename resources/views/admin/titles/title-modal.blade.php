@@ -7,15 +7,15 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <form method="post" id="insert-form">
+          <form method="POST" enctype="multipart/form-data" id="insert-form">
             <input type="hidden" name="id">
             <div class="form-group">
               <h3>Title Name</h3>
-              <input type="text" name="title_name" id="title-name" class="form-control" />
+              <input type="text" class="form-control" name="title_name" id="title_name" >
             </div>
             <div class="form-group">
               <h3>Status</h3>
-              <select name="status" id="title-status" class="form-control">
+              <select name="title_status" id="title_status" class="form-control">
                 <option disabled selected value="none">Select status</option>
                 <option value="Active">Active</option>
                 <option value="Inactive">Inactive</option>
@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" onclick="submitTitle()" name="insert" id="insert" value="Insert" class="btn btn-primary"> Add</button>
+        <button type="button" onclick="validateTitleForm()" name="insert" id="insert" value="Insert" class="btn btn-primary"> Add</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

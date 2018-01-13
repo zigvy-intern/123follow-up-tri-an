@@ -4,31 +4,31 @@
 			<div class="col-xs-2">
 				<a href="{{route('accountSetting')}}">
 					<i class="fa fa-cog" aria-hidden="true"></i>
-					<span> Accout Setting </span>
+					<span style="margin-left:-13px;"> Accout Setting </span>
 				</a>
 			</div>
 			<div class="col-xs-2">
 				<a href="{{route('customer')}}">
 					<i class="fa fa-user-circle" aria-hidden="true"></i>
-					<span> Customers </span>
+					<span style="margin-left:-7px;"> Customers </span>
 				</a>
 			</div>
 			<div class="col-xs-2">
 				<a href="{{route('tourLayout')}}">
 					<i class="fa fa-globe" aria-hidden="true"></i>
-					<span> Booking Tour</span>
+					<span style="margin-left:7px;">Tours</span>
 				</a>
 			</div>
 			<div class="col-xs-2">
 				<a href="{{route('hotelLayout')}}">
 					<i class="fa fa-bed" aria-hidden="true"></i>
-					<span> Booking Hotel</span>
+					<span style="margin-left:6px;">Hotels</span>
 				</a>
 			</div>
 			<div class="col-xs-2">
-				<a href="#">
-					<i class="fa fa-address-book" aria-hidden="true"></i>
-					<span> Contacts </span>
+				<a href="{{route('statistic')}}">
+					<i class="fa fa-server" aria-hidden="true"></i>
+					<span style="margin-left:4px;">Statistic</span>
 				</a>
 			</div>
 		</div>

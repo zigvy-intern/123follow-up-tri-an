@@ -5,9 +5,8 @@
     </div>
     <div class="panel-body">
       <div class="row">
-        <div class="col-md-3 col-lg-3 " align="center">
-          <img id="profile-image" alt="User Picture" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg"  class="img-circle img-responsive">
-          <input id="profile-image-upload" class="hidden" type="file">
+        <div class="col-md-3 col-lg-3" id="profile" align="center">
+          <img id="profile-image" alt="User Picture" src="source/img/profile/{{Auth::user()->image}}"  class="img-circle img-responsive">
         </div>
         <div class=" col-md-9 col-lg-9 ">
           <table class="table table-user-information">
@@ -42,7 +41,7 @@
               </tr>
               <tr>
                 <td>Role : </td>
-                <td>{{Auth::user()->role}}</td>
+                <td>{{Auth::user()->role_id}}</td>
               </tr>
               <tr>
                 <td class="user-password" hidden>{{Auth::user()->password}} </td>
