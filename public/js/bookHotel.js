@@ -19,7 +19,7 @@ $(function() {
     $('#bookHotel').text('Confirm');
   });
 
-  $('#book_hotel_city').on('change', function(){
+   $('#book_hotel_city').on('change', function(){
     document.getElementById('book_hotel_district').options.length = 0;
     document.getElementById('book_hotel_ward').options.length = 0;
     document.getElementById('book_hotel_name').options.length = 0;
@@ -339,8 +339,8 @@ const getBookDistrict = function(cityCode) {
     const bookDistricts = JSON.parse(response);
     if(bookDistricts.length > 0) {
       $('#book_hotel_district').append(`
-            <option selected">Choose..</option>
-        `)
+         <option selected">Choose..</option>
+      `)
       $.each(bookDistricts, function(index, district){
         $('#book_hotel_district').append(`
           <option value="${district.maqh}">${district.district_name}</option>
@@ -354,8 +354,8 @@ const getBookWard = function(districtCode) {
     const bookWards = JSON.parse(response);
     if(bookWards.length > 0) {
       $('#book_hotel_ward').append(`
-            <option selected">Choose..</option>
-        `)
+        <option selected">Choose..</option>
+      `)
       $.each(bookWards, function(index, ward){
         $('#book_hotel_ward').append(`
           <option value="${ward.xaid}">${ward.ward_name}</option>
