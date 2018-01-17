@@ -21,18 +21,53 @@ $(function() {
 
   $('#book_hotel_city').on('change', function(){
     document.getElementById('book_hotel_district').options.length = 0;
+    document.getElementById('book_hotel_ward').options.length = 0;
+    document.getElementById('book_hotel_name').options.length = 0;
+    document.getElementById('book_hotel_type').options.length = 0;
+    $('#modalBookHotel #book_hotel_address').val('');
+    $('#modalBookHotel #book_check_in').val('');
+    $('#modalBookHotel #book_check_out').val('');
+    $('#modalBookHotel #book_hotel_price').val('');
+    $('#modalBookHotel #book_hotel_night').val('');
+    $('#modalBookHotel #book_hotel_totalPrice').val('');
+    $('#modalBookHotel #book_hotel_cus').val('');
+    $('#modalBookHotel #book_hotel_card').val('');
+    $('#modalBookHotel #book_hotel_phone').val('');
     getBookDistrict(this.value)
   })
   $('#book_hotel_district').on('change', function(){
     document.getElementById('book_hotel_ward').options.length = 0;
+    document.getElementById('book_hotel_name').options.length = 0;
+    document.getElementById('book_hotel_type').options.length = 0;
+    $('#modalBookHotel #book_hotel_address').val('');
+    $('#modalBookHotel #book_check_in').val('');
+    $('#modalBookHotel #book_check_out').val('');
+    $('#modalBookHotel #book_hotel_price').val('');
+    $('#modalBookHotel #book_hotel_night').val('');
+    $('#modalBookHotel #book_hotel_totalPrice').val('');
+    $('#modalBookHotel #book_hotel_cus').val('');
+    $('#modalBookHotel #book_hotel_card').val('');
+    $('#modalBookHotel #book_hotel_phone').val('');
     getBookWard(this.value)
   })
   $('#book_hotel_ward').on('change', function(){
     document.getElementById('book_hotel_name').options.length = 0;
+    document.getElementById('book_hotel_type').options.length = 0;
+    $('#modalBookHotel #book_hotel_address').val('');
+    $('#modalBookHotel #book_check_in').val('');
+    $('#modalBookHotel #book_check_out').val('');
+    $('#modalBookHotel #book_hotel_price').val('');
+    $('#modalBookHotel #book_hotel_night').val('');
+    $('#modalBookHotel #book_hotel_totalPrice').val('');
+    $('#modalBookHotel #book_hotel_cus').val('');
+    $('#modalBookHotel #book_hotel_card').val('');
+    $('#modalBookHotel #book_hotel_phone').val('');
     getBookHotel(this.value)
   })
   $('#book_hotel_name').on('change',function(){
     document.getElementById('book_hotel_type').options.length = 0;
+    $('#modalBookHotel #book_hotel_price').val('');
+    $('#modalBookHotel #book_hotel_totalPrice').val('');
     getBookTypeRoom(this.value)
   })
 
@@ -303,6 +338,9 @@ const getBookDistrict = function(cityCode) {
   $.get(API.location.district, {city_id: cityCode}).done(function(response){
     const bookDistricts = JSON.parse(response);
     if(bookDistricts.length > 0) {
+      $('#book_hotel_district').append(`
+            <option selected">Choose..</option>
+        `)
       $.each(bookDistricts, function(index, district){
         $('#book_hotel_district').append(`
           <option value="${district.maqh}">${district.district_name}</option>
@@ -326,7 +364,11 @@ const getBookWard = function(districtCode) {
 const getBookHotel = function(hotelId) {
   $.get(API.get.hotel, {hotel_id: hotelId}).done(function(response){
     const getHotels = JSON.parse(response);
+    console.log(getHotels)
     if(getHotels.length > 0) {
+      $('#book_hotel_name').append(`
+            <option selected">Choose..</option>
+        `)
       $.each(getHotels, function(index, hotel){
         $('#book_hotel_name').append(`
           <option value="${hotel.id}" data-hotel-address="${hotel.hotel_address}">${hotel.hotel_name}</option>
@@ -339,6 +381,9 @@ const getBookTypeRoom = function(typeRoomId) {
   $.get(API.get.typeRoom, {type_room_id: typeRoomId}).done(function(response){
     const getTypeRooms = JSON.parse(response);
     if(getTypeRooms.length > 0) {
+      $('#book_hotel_type').append(`
+            <option selected">Choose..</option>
+        `)
       $.each(getTypeRooms, function(index, type){
         $('#book_hotel_type').append(`
           <option data-price="${type.room_price}" value="${type.id}" ${getTypeRooms.type_room_id === type.type_room_id ? 'selected' : null}>${type.type_room}</option>
