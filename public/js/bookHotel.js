@@ -353,6 +353,9 @@ const getBookWard = function(districtCode) {
   $.get(API.location.ward, {district_id: districtCode}).done(function(response){
     const bookWards = JSON.parse(response);
     if(bookWards.length > 0) {
+      $('#book_hotel_ward').append(`
+            <option selected">Choose..</option>
+        `)
       $.each(bookWards, function(index, ward){
         $('#book_hotel_ward').append(`
           <option value="${ward.xaid}">${ward.ward_name}</option>
