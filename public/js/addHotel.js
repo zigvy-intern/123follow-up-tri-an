@@ -132,6 +132,9 @@ const getDistrict = function(cityCode) {
   $.get(API.location.district, {city_id: cityCode}).done(function(response){
     const districts = JSON.parse(response);
     if(districts.length > 0) {
+      $('#add_hotel_district').append(`
+        <option selected>Choose..</option>
+      `)
       $.each(districts, function(index, data){
         $('#add_hotel_district').append(`
           <option value="${data.maqh}">${data.district_name}</option>
@@ -144,6 +147,9 @@ const getWard = function(districtCode) {
   $.get(API.location.ward, {district_id: districtCode}).done(function(response){
     const wards = JSON.parse(response);
     if(wards.length > 0) {
+      $('#add_hotel_ward').append(`
+        <option selected>Choose..</option>
+      `)
       $.each(wards, function(index, dataWard){
         $('#add_hotel_ward').append(`
           <option value="${dataWard.xaid}">${dataWard.ward_name}</option>
