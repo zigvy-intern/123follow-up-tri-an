@@ -367,7 +367,11 @@ const getBookWard = function(districtCode) {
 const getBookHotel = function(hotelId) {
   $.get(API.get.hotel, {hotel_id: hotelId}).done(function(response){
     const getHotels = JSON.parse(response);
+    console.log(getHotels)
     if(getHotels.length > 0) {
+      $('#book_hotel_name').append(`
+            <option selected">Choose..</option>
+        `)
       $.each(getHotels, function(index, hotel){
         $('#book_hotel_name').append(`
           <option value="${hotel.id}" data-hotel-address="${hotel.hotel_address}">${hotel.hotel_name}</option>
@@ -380,9 +384,9 @@ const getBookTypeRoom = function(typeRoomId) {
   $.get(API.get.typeRoom, {type_room_id: typeRoomId}).done(function(response){
     const getTypeRooms = JSON.parse(response);
     if(getTypeRooms.length > 0) {
-      $('#book_hotel_name').append(`
-         <option selected">Choose..</option>
-      `)
+      $('#book_hotel_type').append(`
+            <option selected">Choose..</option>
+        `)
       $.each(getTypeRooms, function(index, type){
         $('#book_hotel_type').append(`
           <option data-price="${type.room_price}" value="${type.id}" ${getTypeRooms.type_room_id === type.type_room_id ? 'selected' : null}>${type.type_room}</option>

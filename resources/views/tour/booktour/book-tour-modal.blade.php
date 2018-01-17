@@ -55,7 +55,7 @@
             </script>
             <div class="form-group col-md-3">
               <h3>Tour Price</h3>
-              <input type="number" class="form-control" name="book_tour_price" id="book_tour_price">
+              <input type="number" class="form-control" name="book_tour_price" id="book_tour_price" readonly>
             </div>
             <div class="form-group col-md-3">
               <h3>Members</h3>
@@ -84,7 +84,7 @@
             </div>
             <div class="form-group col-md-6">
               <h3><b>Total Price</b></h3>
-              <b><input type="number" class="form-control" name="book_tour_totalPrice" id="book_tour_totalPrice"></input></b>
+              <b><input type="number" class="form-control" name="book_tour_totalPrice" id="book_tour_totalPrice" readonly></input></b>
             </div>
           </form>
         </div>

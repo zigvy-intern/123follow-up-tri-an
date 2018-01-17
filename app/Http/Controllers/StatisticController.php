@@ -22,7 +22,7 @@ class StatisticController extends Controller
     public function getHotelName(Request $req)
     {
         $hotel_code = $req->hotel_id;
-        $hotel = DB::table('book_hotel')->where('id_hotel', $hotel_code)->get();
+        $hotel = DB::table('book_hotel')->where('id_hotel', $hotel_code)->sum('hotel_total_price');
         echo json_encode($hotel);
     }
 }

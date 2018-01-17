@@ -48,6 +48,7 @@ $(function() {
 
   $('#add_hotel_city').on('change', function(){
     document.getElementById('add_hotel_district').options.length = 0;
+    document.getElementById('add_hotel_ward').options.length = 0;
     getDistrict(this.value)
   })
   $('#add_hotel_district').on('change', function(){

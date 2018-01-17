@@ -18,7 +18,7 @@
             </div>
             <div class="form-group col-md-6">
               <h3 style="margin-bottom:10px;">Total Price</h3>
-              <input class="form-control" name="total_price_hotel" id="total_price_hotel">
+              <input class="form-control" name="total_price_hotel" id="total_price_hotel" readonly>
             </div>
           </form>
         </div>
